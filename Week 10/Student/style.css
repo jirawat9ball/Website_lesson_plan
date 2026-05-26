@@ -1,0 +1,31 @@
+/* === ภารกิจการจัดการ Flexbox === */
+
+body {
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-container {
+    /* 1. เปิดใช้การจัดเลย์เอาต์ด้วย Flexbox */
+    
+    /* 2. สั่งให้การ์ดขึ้นบรรทัดใหม่เมื่อเนื้อหาล้นจอ (Flex wrap) */
+    
+    /* 3. จัดตำแหน่งกึ่งกลางและกำหนดระยะห่าง (gap) */
+    
+    max-width: 1000px;
+}
+
+.card {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card img {
+    border-radius: 4px;
+    display: block;
+}

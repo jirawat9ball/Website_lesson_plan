@@ -1,0 +1,29 @@
+/* === ภารกิจการจัดรูปแบบแบบอักษร === */
+/* 1. นำเข้าฟอนต์จาก Google Fonts ด้านบน (เช่น Prompt, Mitr) */
+
+body {
+    background-color: #f5f6fa;
+    color: #2f3640;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+h1 {
+    /* 2. เปลี่ยน font-family, font-size, color และ text-align ของหัวข้อ */
+}
+
+.subtitle {
+    /* 3. ปรับขนาดตัวอักษรให้นุ่มนวลลง และเอียงตัวหนังสือ */
+}
+
+.content {
+    /* 4. ปรับระยะห่างระหว่างบรรทัด (line-height) และระยะช่องไฟ (letter-spacing) ให้อ่านง่ายขึ้น */
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 04: โปรแกรมคำนวณ BMI</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f7f9fc; }
+        .app { background: white; max-width: 300px; margin: 0 auto; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        input { width: 80%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        #result { margin-top: 20px; font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h2>โปรแกรมคำนวณ BMI</h2>
+        <!-- ให้นักเรียนสร้างช่อง Input สำหรับค่าน้ำหนักและส่วนสูง และปุ่มกดตรงนี้ -->
+        <input type="number" id="weight" placeholder="น้ำหนัก (กก.)">
+        <input type="number" id="height" placeholder="ส่วนสูง (ซม.)">
+        <br>
+        <button id="calc-btn">คำนวณ</button>
+        <div id="result"></div>
+    </div>
+
+    <!-- เชื่อมโยงกับไฟล์ JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

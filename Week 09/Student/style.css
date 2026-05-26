@@ -1,0 +1,41 @@
+/* === ภารกิจจัดตำแหน่ง CSS Position === */
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f6fa;
+}
+
+.navbar {
+    /* 1. สั่งให้แถบนำทางติดหนึบขอบบนสุดเสมอเมื่อเลื่อนจอ (Position) */
+    background-color: #2f3640;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative; /* ใช้ปูพรมสำหรับ absolute ลิงก์ภายใน */
+}
+
+.notification-btn {
+    /* กำหนดสไตล์ปุ่มแจ้งเตือน */
+}
+
+.badge {
+    /* 2. จัดตำแหน่งไอคอนแจ้งเตือนสีแดงไว้ที่มุมขวาบน (Position: Absolute) */
+    background-color: #ff7675;
+    color: white;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.content {
+    padding: 100px 40px;
+}

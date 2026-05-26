@@ -1,0 +1,34 @@
+/* === ภารกิจการจัดการกล่อง CSS Box Model === */
+
+body {
+    background-color: #1e272e;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.poster {
+    /* 1. จัดขนาดกล่อง ขอบเขตพื้นหลังสีดำเข้ม */
+    background-color: #000;
+    
+    /* 2. จัดการขอบ (Border), ระยะขอบภายใน (Padding), และระยะห่างภายนอก (Margin) */
+    
+    /* 3. จัดกึ่งกลางเนื้อหาการ์ด */
+    text-align: center;
+}
+
+.poster-img {
+    /* 4. จัดการเส้นขอบสีขาวรอบรูปภาพ และเว้นระยะห่าง */
+}
+
+.title {
+    /* 5. เปลี่ยนสีข้อความ ปรับขนาดตัวหนา */
+}
+
+.desc {
+    /* 6. จัดการระยะห่างให้อ่านสบายตา */
+}
