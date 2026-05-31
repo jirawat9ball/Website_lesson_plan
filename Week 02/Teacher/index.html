@@ -2,19 +2,227 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Birthday Invite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียนชมรม E-Sports - โรงเรียนเพลินพัฒนา</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .form-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            color: #38bdf8;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .header p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: #f8fafc;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            background: rgba(15, 23, 42, 0.8);
+        }
+        .form-control::placeholder {
+            color: #64748b;
+        }
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        /* Selection Controls (Radio / Checkbox) */
+        .option-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        .option-item input {
+            cursor: pointer;
+            accent-color: #38bdf8;
+            width: 18px;
+            height: 18px;
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.3);
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.4);
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <h1>It's My Birthday!</h1>
-    <h2>On the 15th of June</h2>
-    <img src="https://raw.githubusercontent.com/appbrewery/webdev/main/birthday-cake.gif" alt="birthday cake" />
-    <h3>What to bring:</h3>
-    <ul>
-        <li>Baloons (I love baloons)</li>
-        <li>Cake (I'm really good at eating)</li>
-        <li>An appetite (There will be lots of food)</li>
-    </ul>
-    <h3>This is where you need to go:</h3>
-    <a href="https://www.google.com/maps">Google Map Link</a>
+
+    <div class="form-card">
+        <div class="header">
+            <h1>🎮 ลงทะเบียนเข้าชมรม E-Sports</h1>
+            <p>โรงเรียนเพลินพัฒนา | ภาคเรียนที่ 1 ปีการศึกษา 2569</p>
+        </div>
+
+        <form action="#" method="POST">
+            <!-- 1. ชื่อ-นามสกุล (Text Input) -->
+            <div class="form-group">
+                <label for="fullname">ชื่อ - นามสกุล</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" placeholder="เช่น เด็กชายสมศักดิ์ รักเรียน" required>
+            </div>
+
+            <!-- 2. อีเมล (Email Input) -->
+            <div class="form-group">
+                <label for="email">อีเมลติดต่อ</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="เช่น somsak@ploenpattana.ac.th" required>
+            </div>
+
+            <!-- 3. รหัสผ่านสำหรับระบบสมาชิก (Password Input) -->
+            <div class="form-group">
+                <label for="password">รหัสผ่านเพื่อเข้าใช้งานระบบ</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="อย่างน้อย 6 ตัวอักษร" required>
+            </div>
+
+            <!-- 4. ระดับชั้น (Select Dropdown - Nesting Concept) -->
+            <div class="form-group">
+                <label for="grade-level">ระดับชั้น</label>
+                <select id="grade-level" name="grade" class="form-control" required>
+                    <option value="" disabled selected>-- เลือกห้องเรียน --</option>
+                    <option value="m5-1">มัธยมศึกษาปีที่ 5/1</option>
+                    <option value="m5-2">มัธยมศึกษาปีที่ 5/2</option>
+                    <option value="m5-3">มัธยมศึกษาปีที่ 5/3</option>
+                    <option value="m5-4">มัธยมศึกษาปีที่ 5/4</option>
+                </select>
+            </div>
+
+            <!-- 5. แพลตฟอร์มที่เล่นหลัก (Radio Buttons - เลือกได้ข้อเดียว) -->
+            <div class="form-group">
+                <label>อุปกรณ์หรือแพลตฟอร์มหลักที่ใช้เล่นเกม</label>
+                <div class="option-group">
+                    <label class="option-item" for="platform-pc">
+                        <input type="radio" id="platform-pc" name="platform" value="PC" required>
+                        PC / คอมพิวเตอร์
+                    </label>
+                    <label class="option-item" for="platform-console">
+                        <input type="radio" id="platform-console" name="platform" value="Console">
+                        Console (PlayStation, Switch)
+                    </label>
+                    <label class="option-item" for="platform-mobile">
+                        <input type="radio" id="platform-mobile" name="platform" value="Mobile">
+                        Mobile / มือถือ
+                    </label>
+                </div>
+            </div>
+
+            <!-- 6. ประเภทเกมที่สนใจ (Checkboxes - เลือกได้หลายข้อ) -->
+            <div class="form-group">
+                <label>ประเภทเกมที่สนใจเข้าร่วมแข่ง (เลือกได้มากกว่า 1)</label>
+                <div class="option-group">
+                    <label class="option-item" for="genre-moba">
+                        <input type="checkbox" id="genre-moba" name="genres" value="MOBA">
+                        MOBA (เช่น RoV, Dota 2)
+                    </label>
+                    <label class="option-item" for="genre-fps">
+                        <input type="checkbox" id="genre-fps" name="genres" value="FPS">
+                        FPS / Shooting (เช่น Valorant, PUBG)
+                    </label>
+                    <label class="option-item" for="genre-sport">
+                        <input type="checkbox" id="genre-sport" name="genres" value="Sports">
+                        Sports / Racing (เช่น FIFA, E-Football)
+                    </label>
+                </div>
+            </div>
+
+            <!-- 7. แนะนำตัวเองเพิ่มเติม (Textarea) -->
+            <div class="form-group">
+                <label for="intro">แนะนำตัวเองหรือระบุอันดับ (Rank) ของเกมที่คุณถนัด</label>
+                <textarea id="intro" name="intro" class="form-control" placeholder="บอกเล่าความสามารถ ประสบการณ์แข่ง หรือเป้าหมายในการสมัครเข้าชมรม..."></textarea>
+            </div>
+
+            <!-- 8. ปุ่มสำหรับกดส่งแบบฟอร์ม (Submit Button) -->
+            <button type="submit" class="submit-btn">ส่งใบสมัครเข้าชมรม 🚀</button>
+        </form>
+    </div>
+
 </body>
 </html>
