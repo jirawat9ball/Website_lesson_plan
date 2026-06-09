@@ -1,20 +1,170 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ลงทะเบียนเข้าชมรม E-Sports</title>
-    <!-- [โจทย์เสริมพิเศษ 10] นักเรียนสามารถเปิดแท็ก <style> ตรงนี้เพื่อตกแต่ง CSS ให้แบบฟอร์มดูสวยงามล้ำสมัยได้เลย! -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ลงทะเบียนชมรม E-Sports - โรงเรียนเพลินพัฒนา</title>
+     <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+     <style>
+          * {
+               box-sizing: border-box;
+               margin: 0;
+               padding: 0;
+          }
+
+          body {
+               font-family: 'Prompt', sans-serif;
+               background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+               color: #f8fafc;
+               min-height: 100vh;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               padding: 40px 20px;
+          }
+
+          .form-card {
+               background: rgba(30, 41, 59, 0.7);
+               backdrop-filter: blur(10px);
+               border: 1px solid rgba(255, 255, 255, 0.1);
+               border-radius: 16px;
+               padding: 40px;
+               width: 100%;
+               max-width: 600px;
+               box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+          }
+
+          .header {
+               text-align: center;
+               margin-bottom: 30px;
+          }
+
+          .header h1 {
+               font-size: 1.8rem;
+               color: #38bdf8;
+               margin-bottom: 8px;
+               font-weight: 700;
+          }
+
+          .header p {
+               color: #94a3b8;
+               font-size: 0.95rem;
+          }
+
+          .form-group {
+               margin-bottom: 20px;
+          }
+
+          .form-group label {
+               display: block;
+               margin-bottom: 8px;
+               font-size: 0.95rem;
+               font-weight: 500;
+               color: #cbd5e1;
+          }
+
+          .form-control {
+               width: 100%;
+               background: rgba(15, 23, 42, 0.6);
+               border: 1px solid rgba(255, 255, 255, 0.15);
+               border-radius: 8px;
+               padding: 12px 16px;
+               color: #f8fafc;
+               font-family: inherit;
+               font-size: 0.95rem;
+               transition: all 0.2s ease;
+          }
+
+          .form-control:focus {
+               outline: none;
+               border-color: #38bdf8;
+               box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+               background: rgba(15, 23, 42, 0.8);
+          }
+
+          .form-control::placeholder {
+               color: #64748b;
+          }
+
+          select.form-control {
+               appearance: none;
+               background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+               background-repeat: no-repeat;
+               background-position: right 16px center;
+               background-size: 16px;
+               padding-right: 40px;
+          }
+
+          /* Selection Controls (Radio / Checkbox) */
+          .option-group {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 15px;
+               margin-top: 5px;
+          }
+
+          .option-item {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               cursor: pointer;
+               font-size: 0.95rem;
+               color: #cbd5e1;
+          }
+
+          .option-item input {
+               cursor: pointer;
+               accent-color: #38bdf8;
+               width: 18px;
+               height: 18px;
+          }
+
+          textarea.form-control {
+               resize: vertical;
+               min-height: 100px;
+          }
+
+          .submit-btn {
+               width: 100%;
+               background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+               border: none;
+               border-radius: 8px;
+               padding: 14px;
+               color: white;
+               font-family: inherit;
+               font-size: 1rem;
+               font-weight: 600;
+               cursor: pointer;
+               transition: all 0.2s ease;
+               box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.3);
+               margin-top: 10px;
+          }
+
+          .submit-btn:hover {
+               transform: translateY(-2px);
+               box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.4);
+               background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+          }
+
+          .submit-btn:active {
+               transform: translateY(0);
+          }
+     </style>
 </head>
+
 <body>
 
-    <!-- [โจทย์หลัก 1] พิมพ์หัวข้อเรื่องชมรมด้วยแท็ก <h1> และคำอธิบายด้วยแท็ก <p> ด้านล่างบรรทัดนี้ -->
+     <!-- [โจทย์หลัก 1] พิมพ์หัวข้อเรื่องชมรมด้วยแท็ก <h1> และคำอธิบายด้วยแท็ก <p> ด้านล่างบรรทัดนี้ -->
 
 
-    <!-- [โจทย์หลัก 2] สร้างแท็กครอบฟอร์มด้วย <form action="#" method="POST"> สำหรับจัดส่งข้อมูล -->
+     <!-- [โจทย์หลัก 2] สร้างแท็กครอบฟอร์มด้วย <form action="#" method="POST"> สำหรับจัดส่งข้อมูล -->
 
 
-        <!-- [โจทย์หลัก 3] เพิ่มช่องกรอกข้อมูลส่วนบุคคล:
+     <!-- [โจทย์หลัก 3] เพิ่มช่องกรอกข้อมูลส่วนบุคคล:
              - ชื่อ-นามสกุล (ใช้ <input type="text">)
              - อีเมล (ใช้ <input type="email">)
              - รหัสผ่าน (ใช้ <input type="password">)
@@ -22,35 +172,36 @@
         -->
 
 
-        <!-- [โจทย์หลัก 4] เพิ่มช่องตัวเลือกห้องเรียนดึงลงมา (Dropdown Menu) โดยสร้างแท็กหลักคือ <select>
+     <!-- [โจทย์หลัก 4] เพิ่มช่องตัวเลือกห้องเรียนดึงลงมา (Dropdown Menu) โดยสร้างแท็กหลักคือ <select>
              และครอบตุ๊กตาตัวเลือกด้านในด้วยแท็ก <option> (มีตัวเลือกสำหรับ ม.5/1 ถึง ม.5/4)
         -->
 
 
-        <!-- [โจทย์เสริมพิเศษ 6] เพิ่มปุ่มเลือกแบบวิทยุ (Radio Buttons - เลือกได้ข้อเดียว) สำหรับแพลตฟอร์มหลักที่ใช้เล่นเกม:
+     <!-- [โจทย์เสริมพิเศษ 6] เพิ่มปุ่มเลือกแบบวิทยุ (Radio Buttons - เลือกได้ข้อเดียว) สำหรับแพลตฟอร์มหลักที่ใช้เล่นเกม:
              - ตัวเลือก PC, Console, Mobile (ใช้ <input type="radio">)
              *เคล็ดลับ*: จะต้องตั้งแอตทริบิวต์ name="..." ให้มีชื่อเดียวกันทั้งหมดเพื่อให้ระบบจัดกลุ่มให้เลือกได้เพียงตัวเลือกเดียว!
         -->
 
 
-        <!-- [โจทย์เสริมพิเศษ 7] เพิ่มช่องติ๊กเลือกประเภทเกมที่สนใจเข้าแข่ง (Checkboxes - เลือกได้หลายข้อ):
+     <!-- [โจทย์เสริมพิเศษ 7] เพิ่มช่องติ๊กเลือกประเภทเกมที่สนใจเข้าแข่ง (Checkboxes - เลือกได้หลายข้อ):
              - ตัวเลือก MOBA, FPS, Sports (ใช้ <input type="checkbox">)
         -->
 
 
-        <!-- [โจทย์เสริมพิเศษ 8] เพิ่มกล่องข้อความบรรยายขนาดใหญ่ยาวหลายบรรทัด สำหรับแนะนำตัวเองหรือระบุระดับแรงก์เกม (ใช้แท็ก <textarea>) -->
+     <!-- [โจทย์เสริมพิเศษ 8] เพิ่มกล่องข้อความบรรยายขนาดใหญ่ยาวหลายบรรทัด สำหรับแนะนำตัวเองหรือระบุระดับแรงก์เกม (ใช้แท็ก <textarea>) -->
 
 
-        <!-- [โจทย์เสริมพิเศษ 9] เพิ่มความโปรดึกขึ้นด้วยการเสริมพลัง:
+     <!-- [โจทย์เสริมพิเศษ 9] เพิ่มความโปรดึกขึ้นด้วยการเสริมพลัง:
              - ใส่แอตทริบิวต์ placeholder="..." ในช่องกรอกเพื่อเป็นตัวอย่างคำใบ้
              - ใส่แอตทริบิวต์ required ในช่องกรอกและปุ่มที่จำเป็นเพื่อบังคับให้ผู้กรอกกรอกข้อมูลก่อนกดส่งฟอร์ม
         -->
 
 
-        <!-- [โจทย์หลัก 5] สร้างปุ่มส่งข้อมูลสำหรับส่งแบบฟอร์มสมาชิกทั้งหมดด้วยแท็ก <button type="submit"> -->
+     <!-- [โจทย์หลัก 5] สร้างปุ่มส่งข้อมูลสำหรับส่งแบบฟอร์มสมาชิกทั้งหมดด้วยแท็ก <button type="submit"> -->
 
 
-    <!-- สิ้นสุดพื้นที่แบบฟอร์ม </form> -->
+     <!-- สิ้นสุดพื้นที่แบบฟอร์ม </form> -->
 
 </body>
+
 </html>

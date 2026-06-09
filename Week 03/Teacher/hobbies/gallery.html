@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Wiki - คลังภาพงานอดิเรก</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0f172a;
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        nav {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            text-align: center;
+        }
+        nav a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 6px;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #1d4ed8;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 20px 0;
+        }
+        h2 {
+            color: #334155;
+            font-size: 1.4rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .gallery-item p {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>คลังภาพงานอดิเรก 📸</h1>
+        <!-- เมนูนำทางแบบย้อนกลับโฟลเดอร์แม่ด้วย ../ และเข้าหน้าเดียวกันโดยอิงชื่อตรงๆ -->
+        <nav>
+            <a href="../index.html">หน้าแรก</a> | 
+            <a href="../about.html">เกี่ยวกับฉัน</a> | 
+            <a href="../contact.html">ติดต่อฉัน</a> | 
+            <a href="hobbies.html">งานอดิเรก</a> | 
+            <a href="gallery.html">คลังภาพงานอดิเรก</a>
+        </nav>
+        <hr>
+        <h2>บรรยากาศงานอดิเรก</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=1" alt="การเล่นเกม">
+                <p>มุมเล่นเกมและการวิเคราะห์</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=2" alt="ชั้นหนังสือ">
+                <p>ชั้นสะสมหนังสือประวัติศาสตร์</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=3" alt="การทำงานโค้ด">
+                <p>บรรยากาศขณะกำลังเขียนโปรแกรม</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
