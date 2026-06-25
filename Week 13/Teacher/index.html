@@ -3,75 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Landing Page (Complete)</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Week 13: Premium Product Landing Page</title>
+    <!-- 1. ดึงข้อมูล Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- โหลดฟอนต์ Google Fonts เพื่อความพรีเมียม -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- 2. ดึงสไตล์ของตัวเอง (Override CSS) วางไว้ด้านล่างของ Bootstrap CDN เสมอ -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- ─── 1. NAVBAR (แถบเมนูนำทางสำเร็จรูป) ─── -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">MyBrand</a>
+            <a class="navbar-brand font-outfit fw-bold" href="#">🪐 ASTRO TECH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">หน้าแรก</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ฟีเจอร์</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ราคา</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#home">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">คุณสมบัติ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">สินค้าแนะนำ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อเรา</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-4 fw-bold">ปฏิวัติการทำงานของคุณ</h1>
-                <p class="lead">ด้วยแอปพลิเคชันที่ช่วยจัดการทุกอย่างให้เป็นเรื่องง่าย</p>
-                <a href="#" class="btn btn-primary btn-lg">เริ่มใช้งานฟรี</a>
+    <!-- ─── 2. CAROUSEL (สไลด์โชว์รูปภาพโฆษณา) ─── -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('https://picsum.photos/id/48/1920/600'); background-size: cover; background-position: center; height: 450px;">
+                <div class="carousel-caption d-none d-md-block bg-dark-overlay rounded-4 p-4">
+                    <h2 class="fw-bold">ท่องอวกาศด้วยเทคโนโลยีแห่งอนาคต</h2>
+                    <p>ค้นหาคอลเลกชันอุปกรณ์ระดับโปรสำหรับการสำรวจอวกาศแบบไร้ขีดจำกัด</p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <img src="https://picsum.photos/500/350?random=30" class="img-fluid rounded shadow" alt="Hero Image">
+            <div class="carousel-item" style="background-image: url('https://picsum.photos/id/119/1920/600'); background-size: cover; background-position: center; height: 450px;">
+                <div class="carousel-caption d-none d-md-block bg-dark-overlay rounded-4 p-4">
+                    <h2 class="fw-bold">นวัตกรรมระดับโลกในมือคุณ</h2>
+                    <p>สินค้าลิขสิทธิ์แท้พร้อมการันตีคุณภาพและความทนทานระดับสูงสุด</p>
+                </div>
             </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- ─── 3. GRID SYSTEM & CARDS (ระบบแบ่งหน้าจอและกล่องสินค้า) ─── -->
+    <div class="container my-5" id="products">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">🚀 สินค้าแนะนำประจำสัปดาห์</h2>
+            <p class="text-muted">เลือกอุปกรณ์อัจฉริยะที่เหมาะกับการเดินทางของคุณวันนี้</p>
+        </div>
+
+        <!-- แถวของสินค้า (1 Row) -->
+        <div class="row g-4">
+            
+            <!-- การ์ดสินค้าชิ้นที่ 1 (แบ่ง 3 ส่วนบนจอใหญ่ col-lg-4, 2 ส่วนบนจอแท็บเล็ต col-md-6, เต็มจอคอลัมน์เดียวบนมือถือ col-12) -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 shadow-sm border-0 product-card">
+                    <img src="https://picsum.photos/id/0/400/250" class="card-img-top rounded-top-4" alt="Astro Laptop">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">AstroBook Pro</h5>
+                        <p class="card-text text-muted flex-grow-1">คอมพิวเตอร์พกพาสเปกอวกาศ ประมวลผลรวดเร็วด้วยระบบ Quantum Core และแบตเตอรี่โซลาร์ทนทานพิเศษ</p>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold text-gradient">฿45,900</span>
+                            <a href="#" class="btn btn-brand float-end">สั่งซื้อเลย</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดสินค้าชิ้นที่ 2 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 shadow-sm border-0 product-card">
+                    <img src="https://picsum.photos/id/160/400/250" class="card-img-top rounded-top-4" alt="Galaxy Watch">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Nebula Watch 5</h5>
+                        <p class="card-text text-muted flex-grow-1">นาฬิกาข้อมือระบบนำร่องวิเคราะห์ดัชนีชีพ ตรวจสอบสนามแม่เหล็ก และเชื่อมต่อแผนที่ดาราศาสตร์แบบเรียลไทม์</p>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold text-gradient">฿12,500</span>
+                            <a href="#" class="btn btn-brand float-end">สั่งซื้อเลย</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- การ์ดสินค้าชิ้นที่ 3 -->
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card h-100 shadow-sm border-0 product-card">
+                    <img src="https://picsum.photos/id/3/400/250" class="card-img-top rounded-top-4" alt="Quantum Device">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Cosmos Router X</h5>
+                        <p class="card-text text-muted flex-grow-1">เราเตอร์กระจายสัญญาณด้วยระบบควอนตัมเกตเวย์ ความเร็วไร้ขีดจำกัด รองรับการติดต่อสื่อสารข้ามดาวเคราะห์</p>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold text-gradient">฿18,900</span>
+                            <a href="#" class="btn btn-brand float-end">สั่งซื้อเลย</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Cards Section -->
-    <div class="bg-light py-5">
+    <!-- ─── 4. CONTACT FOOTER (ส่วนติดต่อและลิขสิทธิ์ท้ายหน้า) ─── -->
+    <footer class="bg-dark text-light py-4 text-center mt-5" id="contact">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">เร็วฟ้าผ่า</h5>
-                            <p class="card-text">ทำงานได้รวดเร็วไม่มีสะดุด ด้วยระบบ Cloud ที่ทันสมัย</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">ปลอดภัย</h5>
-                            <p class="card-text">ข้อมูลของคุณจะถูกเข้ารหัสระดับเดียวกับที่ธนาคารใช้</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">ใช้งานง่าย</h5>
-                            <p class="card-text">หน้าตาแอปที่เป็นมิตร ใครๆ ก็สามารถใช้งานได้ทันที</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="mb-2">🪐 ASTRO TECH - โรงเรียนเพลินพัฒนา ชั้นมัธยมศึกษาปีที่ 5</p>
+            <p class="small text-muted mb-0">© 2026 Astro Tech. พัฒนาและออกแบบหน้าเว็บด้วย Bootstrap 5</p>
         </div>
-    </div>
+    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 3. ดึงข้อมูล Bootstrap 5 Javascript Bundle CDN (เพื่อให้ Carousel และปุ่มแฮมเบอร์เกอร์ทำงานได้จริง) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

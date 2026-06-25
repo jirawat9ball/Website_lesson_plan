@@ -2,37 +2,239 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Colour Vocab (สมุดคำศัพท์สี)</title>
-    <!-- เริ่มต้นด้วยการเชื่อมโยงไฟล์ style.css -->
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 05: Rock Paper Scissors Game (Student)</title>
+    <!-- โหลดฟอนต์ Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e1e2f 0%, #0f0f1b 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f1f2f6;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #a8ff78, #78ffd6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #a4b0be;
+            margin-bottom: 30px;
+        }
+
+        /* ส่วนแสดงคะแนน (Score Board) */
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .score-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .score-label {
+            font-size: 0.9rem;
+            color: #a4b0be;
+            text-transform: uppercase;
+        }
+
+        .score-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .vs {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff4757;
+        }
+
+        /* ส่วนทางเลือกการแสดงผลลัพธ์รอบปัจจุบัน */
+        .match-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 15px 30px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .choice-text {
+            font-weight: 600;
+            color: #70a1ff;
+        }
+
+        .computer-icon {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 0 5px rgba(112, 161, 255, 0.4));
+        }
+
+        /* ส่วนปุ่มตัวเลือก (Option Cards) */
+        .options-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .option-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 20px 10px;
+            font-size: 1.1rem;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: #78ffd6;
+        }
+
+        .option-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+            border-color: transparent;
+        }
+
+        .option-emoji {
+            font-size: 2rem;
+        }
+
+        /* ป้ายแจ้งผลลัพธ์การเล่น */
+        .result-box {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            min-height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ปุ่มรีเซ็ตเมื่อจบเกม */
+        #reset-btn {
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+            display: none; /* ซ่อนตอนเริ่มเกม */
+        }
+
+        #reset-btn:hover {
+            opacity: 0.95;
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>สมุดคำศัพท์สี (Colour Vocab)</h1>
-        <p>สร้างการ์ดคำศัพท์ภาษาอังกฤษเกี่ยวกับสี และตกแต่งสีพื้นหลังตามคำศัพท์นั้นๆ</p>
-        
-        <div class="grid">
-            <!-- ให้นักเรียนสร้างการ์ดคำศัพท์ตรงนี้ เช่น -->
-            <!--
-            <div class="card red">
-                <div class="swatch"></div>
-                <div class="label">Red (สีแดง)</div>
+
+    <div class="game-container">
+        <h1>✊✌️✋ เกมเป่ายิ้งฉุบสะสมแต้ม</h1>
+        <p class="subtitle">สุ่มต่อสู้กับคอมพิวเตอร์ ใครเก็บแต้มครบ 5 คะแนนก่อนเป็นผู้ชนะ!</p>
+
+        <!-- ตารางคะแนน -->
+        <div class="scoreboard">
+            <div class="score-box">
+                <span class="score-label">ผู้เล่น</span>
+                <span id="player-score" class="score-num">0</span>
             </div>
-            -->
-            
-            <div class="card red">
-                <div class="swatch"></div>
-                <div class="label">Red (สีแดง)</div>
-            </div>
-            <div class="card blue">
-                <div class="swatch"></div>
-                <div class="label">Blue (สีน้ำเงิน)</div>
-            </div>
-            <div class="card green">
-                <div class="swatch"></div>
-                <div class="label">Green (สีเขียว)</div>
+            <div class="vs">VS</div>
+            <div class="score-box">
+                <span class="score-label">คอมพิวเตอร์</span>
+                <span id="computer-score" class="score-num">0</span>
             </div>
         </div>
+
+        <!-- หน้ากากแสดงรอบต่อสู้ -->
+        <div class="match-display">
+            <div>คุณเลือก: <span id="player-choice" class="choice-text">-</span></div>
+            <div class="computer-icon">💻</div>
+            <div>คอมเลือก: <span id="computer-choice" class="choice-text">-</span></div>
+        </div>
+
+        <!-- ปุ่มกดตัวเลือกเป่ายิ้งฉุบ -->
+        <div class="options-group">
+            <button id="rock-btn" class="option-btn">
+                <span class="option-emoji">✊</span>
+                <span>ค้อน</span>
+            </button>
+            <button id="scissors-btn" class="option-btn">
+                <span class="option-emoji">✌️</span>
+                <span>กรรไกร</span>
+            </button>
+            <button id="paper-btn" class="option-btn">
+                <span class="option-emoji">✋</span>
+                <span>กระดาษ</span>
+            </button>
+        </div>
+
+        <!-- กล่องแสดงผลลัพธ์รอบต่อสู้ -->
+        <div class="result-box">
+            <div id="game-result">เลือก ค้อน, กรรไกร หรือ กระดาษ เพื่อเริ่มเล่น!</div>
+        </div>
+
+        <!-- ปุ่มรีเซ็ตเมื่อจบเกม -->
+        <button id="reset-btn">🔄 เล่นอีกรอบ</button>
     </div>
+
+    <!-- 1. ดำเนินการเชื่อมต่อสคริปต์ JavaScript ภายนอก (script.js) ด้านล่างนี้ -->
+
 </body>
 </html>

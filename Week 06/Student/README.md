@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 6: CSS Properties (1)
+# สัปดาห์ที่ 5: Introduction to CSS
 
 ## กิจกรรมปฏิบัติ
-[Project] Typography Redesign
+[Project] Colour Vocab
 
 ### งานที่ต้องทำ (Core)
-• Core: ตกแต่งเว็บด้วย Google Fonts
+• Core: ทำหน้าเว็บคำศัพท์ ใส่สีพื้นหลังตามคำศัพท์
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: ใช้ Inspect Element ลองเปลี่ยนสีเว็บโรงเรียน
+• Extra: สร้าง CSS 2 ไฟล์เพื่อลองทำระบบสลับธีม

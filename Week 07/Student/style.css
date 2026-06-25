@@ -1,34 +1,29 @@
-/* === ภารกิจการจัดการกล่อง CSS Box Model === */
+/* === ภารกิจการจัดรูปแบบแบบอักษร === */
+/* 1. นำเข้าฟอนต์จาก Google Fonts ด้านบน (เช่น Prompt, Mitr) */
 
 body {
-    background-color: #1e272e;
-    color: white;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f5f6fa;
+    color: #2f3640;
     margin: 0;
+    padding: 40px;
 }
 
-.poster {
-    /* 1. จัดขนาดกล่อง ขอบเขตพื้นหลังสีดำเข้ม */
-    background-color: #000;
-    
-    /* 2. จัดการขอบ (Border), ระยะขอบภายใน (Padding), และระยะห่างภายนอก (Margin) */
-    
-    /* 3. จัดกึ่งกลางเนื้อหาการ์ด */
-    text-align: center;
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
 }
 
-.poster-img {
-    /* 4. จัดการเส้นขอบสีขาวรอบรูปภาพ และเว้นระยะห่าง */
+h1 {
+    /* 2. เปลี่ยน font-family, font-size, color และ text-align ของหัวข้อ */
 }
 
-.title {
-    /* 5. เปลี่ยนสีข้อความ ปรับขนาดตัวหนา */
+.subtitle {
+    /* 3. ปรับขนาดตัวอักษรให้นุ่มนวลลง และเอียงตัวหนังสือ */
 }
 
-.desc {
-    /* 6. จัดการระยะห่างให้อ่านสบายตา */
+.content {
+    /* 4. ปรับระยะห่างระหว่างบรรทัด (line-height) และระยะช่องไฟ (letter-spacing) ให้อ่านง่ายขึ้น */
 }

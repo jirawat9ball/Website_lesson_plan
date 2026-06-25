@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 11: Grid
+# สัปดาห์ที่ 10: Flexbox
 
 ## กิจกรรมปฏิบัติ
-[Project] Magazine Layout
+[Project] Photo Gallery
 
 ### งานที่ต้องทำ (Core)
-• Core: จัดหน้าเว็บบทความแบบนิตยสาร (ซ้ายรูป ขวาเนื้อหา)
+• Core: สร้างแกลเลอรีรูปภาพที่จัดเรียงด้วย Flexbox
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: ฝึกฝนผ่านเกม Grid Garden
+• Extra: แข่งขันเล่นเกม Flexbox Froggy

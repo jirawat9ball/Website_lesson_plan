@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 10: Flexbox
+# สัปดาห์ที่ 9: Advanced Layouts
 
 ## กิจกรรมปฏิบัติ
-[Project] Photo Gallery
+[Project] Sticky Nav & Badges
 
 ### งานที่ต้องทำ (Core)
-• Core: สร้างแกลเลอรีรูปภาพที่จัดเรียงด้วย Flexbox
+• Core: แถบเมนูแบบติดหนึบ และปุ่มแจ้งเตือนมุมขวาบน
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: แข่งขันเล่นเกม Flexbox Froggy
+• Extra: ใส่ Hover effect เมื่อนำเมาส์ไปชี้

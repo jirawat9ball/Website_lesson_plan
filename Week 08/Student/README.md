@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 8: Midterm Checkpoint
+# สัปดาห์ที่ 7: CSS Properties (2)
 
 ## กิจกรรมปฏิบัติ
-🎯 [Capstone 1] Online Resume
+[Project] Motivational Poster
 
 ### งานที่ต้องทำ (Core)
-• Core: สร้างเรซูเม่ของตัวเองแบบจัดเต็มด้วย HTML/CSS
+• Core: สร้างโปสเตอร์คำคม จัดกรอบให้สวยงาม
 
 ### งานเพิ่มเติม (Extra/Review)
-• Review: เดินดูจอเพื่อนและโหวตผลงานที่เตะตา
+• Extra: ใช้ border-radius วาดรูปทรงด้วย CSS

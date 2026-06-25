@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 7: CSS Properties (2)
+# สัปดาห์ที่ 6: CSS Properties (1)
 
 ## กิจกรรมปฏิบัติ
-[Project] Motivational Poster
+[Project] Typography Redesign
 
 ### งานที่ต้องทำ (Core)
-• Core: สร้างโปสเตอร์คำคม จัดกรอบให้สวยงาม
+• Core: ตกแต่งเว็บด้วย Google Fonts
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: ใช้ border-radius วาดรูปทรงด้วย CSS
+• Extra: ใช้ Inspect Element ลองเปลี่ยนสีเว็บโรงเรียน

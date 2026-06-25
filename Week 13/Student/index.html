@@ -3,23 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Landing Page (Complete)</title>
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Week 13: Product Landing Page (Student)</title>
+    
+    <!-- 1. [ภารกิจ] ดึงข้อมูล Bootstrap 5 CSS CDN ด้านล่างนี้ -->
+
+
+    <!-- โหลดฟอนต์ Google Fonts เพื่อใช้แต่งสไตล์เสริม -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. [ภารกิจ] ลิงก์ไฟล์สไตล์ส่วนตัว style.css ให้ถูกต้อง (อยู่ใต้ CDN เสมอ) -->
+    
 </head>
 <body>
-    <!-- ให้นักเรียนตกแต่งชิ้นงานประกอบร่างหน้าสินค้าให้สมบูรณ์ โดยแทรก Components ต่างๆ ดังนี้ -->
-    <!-- 1. Navbar บนสุด (.navbar) -->
-    <!-- 2. กล่องการ์ดสินค้า (.card) จัดวางเรียงในคอลัมน์ Grid -->
-    <!-- 3. ปุ่มตกแต่งสำเร็จรูป (.btn, .btn-primary) -->
-    
-    <div class="container mt-5">
-        <h1 class="text-center">Product Showroom</h1>
-        <hr>
-        <!-- แทรกโค้ดของนักเรียนที่นี่ -->
+
+    <!-- ─── 3. [ภารกิจ] NAVBAR (แถบเมนูนำทาง) ─── -->
+    <!-- (คำแนะนำ: ค้นหารูปแบบเมนูจากหัวข้อ Navbar ในหน้าเว็บ Bootstrap) -->
+
+
+    <!-- ─── 4. [ภารกิจ] CAROUSEL (สไลด์โชว์รูปภาพ) ─── -->
+    <!-- (คำแนะนำ: นำโค้ด Carousel มาใส่ และเชื่อมที่อยู่ภาพโฆษณาสัก 2 ภาพ) -->
+
+
+    <!-- ─── 5. [ภารกิจ] GRID SYSTEM & CARDS ─── -->
+    <div class="container my-5" id="products">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">🚀 สินค้าแนะนำ</h2>
+            <p class="text-muted">โปรดระบุรายละเอียดสินค้าเด่นของคุณ</p>
+        </div>
+
+        <!-- 5.1 สร้างแผงแถวแนวนอน (Row) สำหรับวางการ์ดสินค้า -->
+        <div class="row g-4">
+            
+            <!-- 5.2 สร้างกล่องสินค้าชิ้นที่ 1, 2 และ 3 (เรียง 3 ส่วนบนจอใหญ่ col-lg-4, 2 ส่วนบนแท็บเล็ต col-md-6, จอมือถือเต็ม col-12) -->
+            
+            <!-- (ตัวอย่างโครงสร้างภายในการ์ด)
+            <div class="คลาสสัดส่วนกริด">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">...</h5>
+                        <p class="card-text text-muted">...</p>
+                        <div class="mt-3">
+                            <span class="fs-5 fw-bold text-gradient">฿...</span>
+                            <a href="#" class="btn btn-brand float-end">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+
+        </div>
     </div>
-    
-    <!-- Bootstrap JS Bundle for Interactive Components -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ─── 6. CONTACT FOOTER (ส่วนท้ายเว็บ) ─── -->
+    <footer class="bg-dark text-light py-4 text-center mt-5" id="contact">
+        <div class="container">
+            <p class="mb-2">🪐 ASTRO TECH - โรงเรียนเพลินพัฒนา ชั้นมัธยมศึกษาปีที่ 5</p>
+            <p class="small text-muted mb-0">© 2026 Astro Tech. พัฒนาและออกแบบหน้าเว็บด้วย Bootstrap 5</p>
+        </div>
+    </footer>
+
+    <!-- 7. [ภารกิจ] ดึงข้อมูล Bootstrap 5 Javascript Bundle CDN ที่ด้านล่างสุดของ body -->
+
 </body>
 </html>

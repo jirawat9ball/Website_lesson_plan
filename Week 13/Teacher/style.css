@@ -1,0 +1,60 @@
+/* === Override CSS: เขียนทับสไตล์สำเร็จรูปของ Bootstrap === */
+
+body {
+    background-color: #fafbfc;
+    color: #2d3436;
+    font-family: 'Prompt', sans-serif;
+}
+
+.font-outfit {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ตกแต่งพื้นหลังคำอธิบายรูปภาพบนสไลด์โชว์ให้น่าอ่านขึ้น */
+.bg-dark-overlay {
+    background: rgba(15, 15, 27, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* สร้างไล่ระดับสีพิเศษสำหรับราคาและหัวข้อ */
+.text-gradient {
+    background: linear-gradient(45deg, #7f00ff, #e100ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ปรับแต่งปุ่มแบรนด์เฉพาะตัว (Custom Brand Button) ทับสไตล์ปุ่มปกติ */
+.btn-brand {
+    background: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%);
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(127, 0, 255, 0.2);
+}
+
+.btn-brand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(127, 0, 255, 0.35);
+    opacity: 0.95;
+}
+
+/* ปรับแต่งการ์ดสินค้าให้นุ่มนวลและทันสมัย */
+.product-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

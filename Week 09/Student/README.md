@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 9: Advanced Layouts
+# สัปดาห์ที่ 8: Midterm Checkpoint
 
 ## กิจกรรมปฏิบัติ
-[Project] Sticky Nav & Badges
+🎯 [Capstone 1] Online Resume
 
 ### งานที่ต้องทำ (Core)
-• Core: แถบเมนูแบบติดหนึบ และปุ่มแจ้งเตือนมุมขวาบน
+• Core: สร้างเรซูเม่ของตัวเองแบบจัดเต็มด้วย HTML/CSS
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: ใส่ Hover effect เมื่อนำเมาส์ไปชี้
+• Review: เดินดูจอเพื่อนและโหวตผลงานที่เตะตา

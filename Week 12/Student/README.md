@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 12: Bootstrap (Intro)
+# สัปดาห์ที่ 11: Grid
 
 ## กิจกรรมปฏิบัติ
-[Project] Product Landing Page (Draft)
+[Project] Magazine Layout
 
 ### งานที่ต้องทำ (Core)
-• Core: แบ่ง Layout หน้าเว็บขายของด้วย Bootstrap
+• Core: จัดหน้าเว็บบทความแบบนิตยสาร (ซ้ายรูป ขวาเนื้อหา)
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: ทดสอบย่อหน้าจอเพื่อดูการทำงาน Responsive
+• Extra: ฝึกฝนผ่านเกม Grid Garden
