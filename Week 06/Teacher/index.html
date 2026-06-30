@@ -2,41 +2,33 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Colour Vocab (Theme Demo)</title>
-    <!-- ครูสามารถเปลี่ยนเป็น dark.css เพื่อสาธิตการสลับธีม -->
-    <link rel="stylesheet" href="light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>สมุดคำศัพท์สี (Colour Vocab)</h1>
-        <p>ลองสลับธีมโดยการเปลี่ยนชื่อไฟล์ CSS ในโค้ด (สลับระหว่าง light.css และ dark.css)</p>
+    <div class="register-container">
+        <h2 class="form-title">สร้างบัญชีผู้ใช้</h2>
+        <p class="form-subtitle">เข้าร่วมเป็นส่วนหนึ่งกับเราได้ฟรี!</p>
         
-        <div class="grid">
-            <div class="card red">
-                <div class="swatch"></div>
-                <div class="label">Red (สีแดง)</div>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="username">ชื่อผู้ใช้</label>
+                <input type="text" id="username" name="username" placeholder="กรอกชื่อผู้ใช้ของคุณ">
             </div>
-            <div class="card blue">
-                <div class="swatch"></div>
-                <div class="label">Blue (สีน้ำเงิน)</div>
+
+            <div class="form-group">
+                <label for="email">อีเมล</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com">
             </div>
-            <div class="card green">
-                <div class="swatch"></div>
-                <div class="label">Green (สีเขียว)</div>
+
+            <div class="form-group">
+                <label for="password">รหัสผ่าน</label>
+                <input type="password" id="password" name="password" placeholder="รหัสผ่านอย่างน้อย 8 ตัวอักษร">
             </div>
-            <div class="card yellow">
-                <div class="swatch"></div>
-                <div class="label">Yellow (สีเหลือง)</div>
-            </div>
-            <div class="card purple">
-                <div class="swatch"></div>
-                <div class="label">Purple (สีม่วง)</div>
-            </div>
-            <div class="card orange">
-                <div class="swatch"></div>
-                <div class="label">Orange (สีส้ม)</div>
-            </div>
-        </div>
+
+            <button type="submit" class="submit-btn">สมัครสมาชิก</button>
+        </form>
     </div>
 </body>
 </html>

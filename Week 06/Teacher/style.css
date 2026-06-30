@@ -1,0 +1,112 @@
+/* นำเข้าฟอนต์ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+/* Reset สไตล์พื้นฐาน */
+* {
+    box-sizing: border-box; /* สำคัญ: ทำให้ padding ไม่บวกเพิ่มความกว้าง/สูงรวม */
+    margin: 0;
+    padding: 0;
+}
+
+/* ตกแต่งส่วนพื้นหลังทั้งหน้า (Tag Selector) */
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    /* ใช้ Flexbox จัดฟอร์มให้อยู่กึ่งกลางหน้าจอ (Layout) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* กล่องฟอร์มลงทะเบียน (Class Selector & Box Model) */
+.register-container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 40px 30px; /* ระยะห่างภายใน (บน-ล่าง 40px, ซ้าย-ขวา 30px) */
+    border-radius: 12px; /* ทำขอบโค้งมน */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ใส่เงาให้กล่องมีมิติลอยขึ้นมา */
+    position: relative; /* เตรียมพร้อมสำหรับ Absolute Positioning */
+}
+
+/* ส่วนหัวข้อ (Text Styling) */
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 5px; /* ระยะห่างภายนอกด้านล่าง */
+}
+
+.form-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+/* จัดกลุ่มกล่อง Input (Layout) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* เปลี่ยนจาก inline เป็น block เพื่อให้อยู่คนละบรรทัดกับ input */
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4b5563;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px; /* เพิ่มพื้นที่ภายในช่องกรอกให้คลิกง่ายขึ้น */
+    font-size: 14px;
+    font-family: 'Kanit', sans-serif;
+    border: 1px solid #d1d5db; /* เส้นขอบ */
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s; /* แอนิเมชันตอนเปลี่ยนสี */
+}
+
+/* Pseudo-class: เมื่อนำเมาส์ไปคลิกที่ช่อง Input */
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* ปุ่มกด (Box Model & Text Styling) */
+.submit-btn {
+    width: 100%;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Kanit', sans-serif;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #2563eb; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+}
+
+/* ทดลองใช้งาน Positioning (ป้ายตกแต่ง) */
+.register-container::before {
+    content: "New";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

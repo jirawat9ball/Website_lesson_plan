@@ -1,10 +1,10 @@
-# สัปดาห์ที่ 5: Introduction to CSS
+# สัปดาห์ที่ 6: Introduction to CSS
 
 ## กิจกรรมปฏิบัติ
-[Project] Colour Vocab
+[Project] Register Form Styling
 
 ### งานที่ต้องทำ (Core)
-• Core: ทำหน้าเว็บคำศัพท์ ใส่สีพื้นหลังตามคำศัพท์
+• Core: สร้างโครงสร้างหน้าเว็บฟอร์มลงทะเบียน และใช้ CSS พื้นฐาน (Selectors, Text Styling, Box Model) ในการตกแต่งความสวยงาม
 
 ### งานเพิ่มเติม (Extra/Review)
-• Extra: สร้าง CSS 2 ไฟล์เพื่อลองทำระบบสลับธีม
+• Extra: จัด Layout ด้วย Display และทดลองใช้ Positioning พร้อมฝึกใช้ Chrome Inspector ในการ Debug
