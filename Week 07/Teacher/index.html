@@ -2,17 +2,44 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Typography Redesign</title>
+    <title>เมนูสุดโปรด: กะเพราหมูกรอบ</title>
+    <!-- 1. นำเข้า Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;500&family=Prompt:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. เชื่อมต่อไฟล์ CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
     <div class="container">
-        <h1>ศิลปะแห่งการใช้ฟอนต์</h1>
-        <p class="subtitle">การเลือกฟอนต์ที่ดีช่วยให้อ่านง่ายและดูเป็นมืออาชีพ</p>
-        <p class="content">ในบทนี้เราเรียนรู้การนำ Google Fonts มาใช้ในเว็บไซต์ และการปรับแต่งคุณสมบัติต่างๆ เช่น font-size, font-weight, line-height และ letter-spacing</p>
+        <!-- การ์ดตัวอย่างของครู (เมนูกะเพราหมูกรอบ) -->
+        <div class="menu-card teacher-card">
+            <h1>กะเพราหมูกรอบ</h1>
+            <h2>เมนูสิ้นคิด แต่ไม่เคยสิ้นใจ!</h2>
+            <!-- เพิ่มรูปภาพประกอบเมนูอาหาร -->
+            <img src="https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&w=600&q=80" alt="กะเพราหมูกรอบ" class="food-image">
+            <p>ความกรอบของหมูกรอบที่ทอดมาอย่างพอดี ผัดคลุกเคล้ากับใบกะเพราหอมๆ พริกสด และกระเทียม รสชาติเผ็ดร้อนจัดจ้าน ราดบนข้าวสวยร้อนๆ โปะด้วยไข่ดาวกรอบนอกนุ่มใน...</p>
+            <p>แค่คิดก็หิวแล้ว! นี่คือศิลปะแห่งอาหารไทยที่ผสมผสานรสชาติและความรู้สึกได้อย่างลงตัวที่สุด</p>
+        </div>
+
+        <!-- การ์ดที่ 1: พื้นที่สำหรับนักเรียนทดลองเขียนเอง -->
+        <div class="menu-card student-card-1">
+            <h1>(ใส่ชื่อเมนูโปรดของคุณ)</h1>
+            <h2>(ใส่คำบรรยายสั้นๆ ชวนหิว)</h2>
+            <!-- ให้นักเรียนค้นหาลิงก์รูปภาพจากเน็ตมาใส่ที่ src -->
+            <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=600&q=80" alt="รูปภาพเมนูนักเรียน" class="food-image">
+            <p>(ทดลองเขียนบรรยายความอร่อยของเมนูนี้ เพื่อดึงดูดอารมณ์คนอ่าน)</p>
+            <p>(ลองตกแต่งสีของการ์ดนี้ในไฟล์ style.css ดูนะ!)</p>
+        </div>
+
+        <!-- การ์ดที่ 2: พื้นที่สำหรับนักเรียนทดลองเขียนเอง -->
+        <div class="menu-card student-card-2">
+            <h1>(ใส่ชื่อของหวาน/เครื่องดื่ม)</h1>
+            <h2>(ใส่คำบรรยายสั้นๆ)</h2>
+            <!-- ให้นักเรียนค้นหาลิงก์รูปภาพจากเน็ตมาใส่ที่ src -->
+            <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?auto=format&fit=crop&w=600&q=80" alt="รูปภาพของหวาน" class="food-image">
+            <p>(ทดลองบรรยายรสชาติของหวานหรือเครื่องดื่มแก้วโปรด)</p>
+            <p>(อย่าลืมลองเปลี่ยนสีตัวอักษรของการ์ดนี้ให้เข้ากับเมนูด้วยล่ะ!)</p>
+        </div>
     </div>
-</body>
 </html>

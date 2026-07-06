@@ -1,38 +1,80 @@
+/* 1. การใช้สี HEX สำหรับพื้นหลัง (Background) */
 body {
-    background-color: #fafafa;
-    color: #333;
+    background-color: #FFF6E5; /* สีครีมอ่อนๆ ดูอบอุ่นน่ากิน (HEX) */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* ใช้ min-height แทน height เผื่อหน้าเว็บยาวกว่าจอ */
     margin: 0;
+    padding: 40px 20px;
 }
+
+/* กล่องจัดระเบียบการ์ดทั้งหมด */
 .container {
-    max-width: 600px;
-    text-align: center;
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 30px; /* ระยะห่างระหว่างการ์ด */
+    flex-wrap: wrap; /* ถ้าจอเล็กให้การ์ดปัดตกไปบรรทัดใหม่อัตโนมัติ */
+    justify-content: center;
 }
+
+/* กล่องเนื้อหาของการ์ด (ใช้ร่วมกันทุกใบ) */
+.menu-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 350px; /* ปรับขนาดให้เล็กลงเพื่อให้วางเรียงกันได้ 3 ใบ */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* --- 📝 พื้นที่ทดลองสำหรับนักเรียน! --- */
+
+/* การ์ดใบที่ 1 */
+.student-card-1 {
+    /* ลองลบคอมเมนต์แล้วเปลี่ยนสีพื้นหลังดูสิ! */
+    /* background-color: #E8F5E9; */ 
+}
+.student-card-1 h1 {
+    /* ลองเปลี่ยนสีฟอนต์หัวข้อของการ์ดนี้ดู */
+}
+
+/* การ์ดใบที่ 2 */
+.student-card-2 {
+    /* ลองเปลี่ยนสีพื้นหลังให้เข้ากับของหวานดูนะ */
+}
+
+/* 2. การใช้สี HSL สำหรับเน้นย้ำ (Accent Color) และ ฟอนต์แบบมีหัว (Serif) */
 h1 {
-    font-family: 'Mitr', sans-serif;
-    font-weight: 500;
-    font-size: 3rem;
-    color: #1a2a6c;
+    font-family: 'Chonburi', serif; /* ฟอนต์หัวข้อแบบมีหัว (Serif) */
+    color: hsl(353, 80%, 40%); /* สีแดงเข้มแบบพริกสด ใช้ HSL เพื่อปรับความสด/สว่างได้ง่าย */
+    font-size: 3.5rem;
+    margin-top: 0;
     margin-bottom: 10px;
 }
-.subtitle {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 700;
-    color: #b21f1f;
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+
+/* ตกแต่งรูปภาพอาหาร */
+.food-image {
+    width: 100%; /* ให้รูปภาพขยายเต็มความกว้างของกล่อง */
+    height: 250px; /* กำหนดความสูงแบบคงที่ */
+    object-fit: cover; /* จัดภาพไม่ให้เบี้ยวเมื่อถูกครอป */
+    border-radius: 10px; /* ทำมุมรูปให้โค้งมน */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.content {
-    font-family: 'Prompt', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+
+/* 3. การใช้สี RGB สำหรับสีข้อความรอง และ ฟอนต์แบบไม่มีหัว (Sans-Serif) */
+h2 {
+    font-family: 'Sarabun', sans-serif;
+    color: rgb(200, 100, 0); /* สีส้มทองแบบหมูกรอบ (RGB) */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+p {
+    font-family: 'Sarabun', sans-serif; /* ฟอนต์เนื้อหาแบบไม่มีหัว (Sans-Serif) อ่านสบายตา */
+    color: rgb(80, 80, 80); /* สีเทาเข้ม (RGB) อ่านสบายตา ไม่ดำสนิทเกินไป */
+    font-size: 1.1rem;
     line-height: 1.8;
-    color: #555;
 }

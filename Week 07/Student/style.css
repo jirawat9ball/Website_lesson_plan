@@ -1,29 +1,56 @@
-/* === ภารกิจการจัดรูปแบบแบบอักษร === */
-/* 1. นำเข้าฟอนต์จาก Google Fonts ด้านบน (เช่น Prompt, Mitr) */
+/* === ภารกิจลงสีและจัดฟอนต์ === */
 
 body {
-    background-color: #f5f6fa;
-    color: #2f3640;
+    /* ภารกิจที่ 4: เปลี่ยนสีพื้นหลังหน้าเว็บด้วยรหัส HEX (เช่น #FF0000) */
+    background-color: #f0f0f0; 
+    
+    /* (ส่วนนี้ครูเตรียมไว้ให้เพื่อจัดหน้าเว็บให้อยู่กึ่งกลางจอ) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
-    padding: 40px;
+    padding: 40px 20px;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
+/* กล่องบรรจุเนื้อหาการ์ด */
+.menu-card {
+    background-color: #FFFFFF; /* เปลี่ยนสีพื้นหลังของการ์ดได้นะ! */
+    width: 100%;
+    max-width: 400px;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* จัดการรูปภาพให้ออกมาสวยงามเสมอ */
+.food-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    /* 2. เปลี่ยน font-family, font-size, color และ text-align ของหัวข้อ */
+    /* ภารกิจที่ 5: นำฟอนต์แบบมีหัว (Serif) จาก Google Fonts มาใส่ใน font-family */
+    
+    /* ภารกิจที่ 6: ใช้รหัสสีแบบ HSL เพื่อเน้นความโดดเด่นของหัวข้อ */
+    color: hsl(0, 0%, 0%);
+    
+    margin-top: 0;
 }
 
-.subtitle {
-    /* 3. ปรับขนาดตัวอักษรให้นุ่มนวลลง และเอียงตัวหนังสือ */
+h2 {
+    /* ภารกิจที่ 7: นำฟอนต์แบบไม่มีหัว (Sans-Serif) มาใส่ใน font-family */
+    
+    /* ภารกิจที่ 8: ใช้รหัสสีแบบ RGB สำหรับคำบรรยายรอง */
+    color: rgb(100, 100, 100);
 }
 
-.content {
-    /* 4. ปรับระยะห่างระหว่างบรรทัด (line-height) และระยะช่องไฟ (letter-spacing) ให้อ่านง่ายขึ้น */
+p {
+    /* ภารกิจที่ 9: ลองกำหนดฟอนต์และสีที่อ่านง่ายสำหรับเนื้อหาทั่วไป */
+    
+    line-height: 1.6;
 }
