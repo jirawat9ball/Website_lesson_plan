@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Example</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* 1. กำหนดให้ Container ทำหน้าที่เป็น Grid */
+        .grid-container {
+            display: grid;
+            
+            /* แบ่งคอลัมน์เป็น 2 ส่วน: ซ้าย 1 ส่วน, ขวา 2 ส่วน ตามในรูป */
+            grid-template-columns: 1fr 2fr;
+            
+            /* กำหนดระยะห่างระหว่างแต่ละกล่อง (ตัวเลือกเสริมเพื่อให้ดูสวยงามเหมือนในตาราง) */
+            gap: 15px; 
+            
+            /* ตั้งค่าความกว้างสูงสุดและจัดให้อยู่ตรงกลางเพื่อให้ดูสวยงามยิ่งขึ้น */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 2. การจัดวางกล่องแต่ละใบ */
+        .header {
+            background-color: #6D9EEB; /* สีฟ้า */
+            /* ให้ Header กินพื้นที่ตั้งแต่เส้นกริดที่ 1 ถึงเส้นที่ 3 (คลุมทั้ง 2 คอลัมน์) */
+            grid-column: 1 / 3; 
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .sidebar {
+            background-color: #93C47D; /* สีเขียว */
+            /* Sidebar จะตกลงมาอยู่ในคอลัมน์แรก (1fr) โดยอัตโนมัติ */
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .main-content {
+            background-color: #F6B26B; /* สีส้ม */
+            /* Main Content จะตกลงมาอยู่ในคอลัมน์ที่สอง (2fr) โดยอัตโนมัติ */
+            padding: 50px 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #FFD966; /* สีเหลือง */
+            /* ให้ Footer กินพื้นที่คลุมทั้ง 2 คอลัมน์เหมือน Header */
+            grid-column: 1 / 3; 
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>ตัวอย่างการจัดโครงสร้างหน้าเว็บด้วย CSS Grid</h1>
+
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main-content">Main Content</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
