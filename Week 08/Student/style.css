@@ -1,34 +1,67 @@
-/* === ภารกิจการจัดการกล่อง CSS Box Model === */
-
 body {
-    background-color: #1e272e;
-    color: white;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    color: #333;
 }
 
-.poster {
-    /* 1. จัดขนาดกล่อง ขอบเขตพื้นหลังสีดำเข้ม */
-    background-color: #000;
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 1. กำหนดให้ Container ทำหน้าที่เป็น Grid */
+.grid-container {
+    /* TODO: ใส่คำสั่งเพื่อเปิดใช้งาน Grid */
     
-    /* 2. จัดการขอบ (Border), ระยะขอบภายใน (Padding), และระยะห่างภายนอก (Margin) */
     
-    /* 3. จัดกึ่งกลางเนื้อหาการ์ด */
+    /* TODO: แบ่งคอลัมน์เป็น 2 ส่วน: 1fr และ 2fr */
+    
+    
+    /* TODO: กำหนดระยะห่างระหว่างแต่ละกล่อง (gap) ให้เป็น 15px */
+    
+    
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 2. การจัดวางกล่องแต่ละใบ */
+.header {
+    background-color: #6D9EEB; /* สีฟ้า */
+    
+    /* TODO: ให้ Header กินพื้นที่คลุมทั้ง 2 คอลัมน์ (grid-column) */
+    
+    
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.sidebar {
+    background-color: #93C47D; /* สีเขียว */
+    /* Sidebar จะตกลงมาอยู่ในคอลัมน์แรก (1fr) โดยอัตโนมัติ */
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.main-content {
+    background-color: #F6B26B; /* สีส้ม */
+    /* Main Content จะตกลงมาอยู่ในคอลัมน์ที่สอง (2fr) โดยอัตโนมัติ */
+    padding: 50px 20px;
+    font-weight: bold;
+    font-size: 1.2em;
     text-align: center;
 }
 
-.poster-img {
-    /* 4. จัดการเส้นขอบสีขาวรอบรูปภาพ และเว้นระยะห่าง */
-}
-
-.title {
-    /* 5. เปลี่ยนสีข้อความ ปรับขนาดตัวหนา */
-}
-
-.desc {
-    /* 6. จัดการระยะห่างให้อ่านสบายตา */
+.footer {
+    background-color: #FFD966; /* สีเหลือง */
+    
+    /* TODO: ให้ Footer กินพื้นที่คลุมทั้ง 2 คอลัมน์เหมือน Header (grid-column) */
+    
+    
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
 }
