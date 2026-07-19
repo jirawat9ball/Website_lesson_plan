@@ -177,6 +177,42 @@
                 "footer";
         }
 
+        /* Layout 5: แบบ 3 คอลัมน์ (มี Sidebar ทั้งสองข้าง โดยใช้ Footer เป็น Sidebar ขวา) */
+        .layout-5 {
+            grid-template-columns: 250px 1fr 250px;
+            grid-template-rows: 100px 1fr;
+            grid-template-areas:
+                "header header header"
+                "sidebar content footer";
+        }
+
+        /* Layout 6: แบบสลับบนล่าง (Footer อยู่บน, Header อยู่ล่าง) */
+        .layout-6 {
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas:
+                "footer footer"
+                "sidebar content"
+                "header header";
+        }
+
+        /* Layout 7: แบบเรียงแนวนอน 4 คอลัมน์ */
+        .layout-7 {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 250px;
+            grid-template-areas:
+                "header sidebar content footer";
+        }
+
+        /* Layout 8: แบบตาราง (Grid 2x2 สลับตำแหน่ง) */
+        .layout-8 {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            grid-template-areas:
+                "header sidebar"
+                "footer content";
+        }
+
         /* ส่วนกล่องโจทย์ปัญหาสำหรับนักเรียน */
         .task-box {
             background-color: var(--glass-bg);
@@ -221,6 +257,10 @@
         <button onclick="changeLayout(2, this)">Layout 2 (Sidebar Right)</button>
         <button onclick="changeLayout(3, this)">Layout 3 (Dashboard App)</button>
         <button onclick="changeLayout(4, this)">Layout 4 (Mobile Stack)</button>
+        <button onclick="changeLayout(5, this)">Layout 5 (3 Columns)</button>
+        <button onclick="changeLayout(6, this)">Layout 6 (Inverted)</button>
+        <button onclick="changeLayout(7, this)">Layout 7 (Horizontal)</button>
+        <button onclick="changeLayout(8, this)">Layout 8 (2x2 Grid)</button>
     </div>
 
     <!-- Grid Container ที่แสดงผล -->
@@ -234,9 +274,9 @@
     <!-- กล่องมอบหมายงานให้นักเรียน -->
     <div class="task-box">
         <h2>🎯 ภารกิจสำหรับนักเรียน (Student Task)</h2>
-        <p>1. ให้เข้าไปแก้ไขไฟล์ HTML และเพิ่ม <strong>Layout 5 (คลาส <code>.layout-5</code>)</strong> ลงในส่วนของ CSS (<code>&lt;style&gt;</code>)</p>
-        <p>2. ออกแบบ <strong>Layout 5</strong> ให้ <code>Header</code> อยู่ตรงกลางด้านบน, ส่วน <code>Sidebar</code> ขนาบซ้าย, และ <code>Footer</code> ขนาบขวา (อิสระในการใช้จินตนาการจัด <code>grid-template-areas</code>)</p>
-        <p>3. เพิ่มปุ่ม <code>&lt;button&gt;</code> ใน HTML สำหรับกดเลือก <strong>Layout 5</strong></p>
+        <p>1. ให้เข้าไปแก้ไขไฟล์ HTML และเพิ่ม <strong>Layout 9 (คลาส <code>.layout-9</code>)</strong> ลงในส่วนของ CSS (<code>&lt;style&gt;</code>)</p>
+        <p>2. ออกแบบ <strong>Layout 9</strong> ให้ <code>Header</code> อยู่ตรงกลางด้านบน, ส่วน <code>Sidebar</code> ขนาบซ้าย, และ <code>Footer</code> ขนาบขวา (อิสระในการใช้จินตนาการจัด <code>grid-template-areas</code>)</p>
+        <p>3. เพิ่มปุ่ม <code>&lt;button&gt;</code> ใน HTML สำหรับกดเลือก <strong>Layout 9</strong></p>
         <p><em>💡 คำใบ้: การใช้ <code>grid-template-areas</code> ช่วยให้คุณเหมือนต่อเลโก้ ลองเรียงชื่อกล่องให้เป็นตารางตามที่ต้องการ!</em></p>
     </div>
 

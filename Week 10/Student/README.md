@@ -1,4 +1,4 @@
-# สัปดาห์ที่ 9: Advanced Layouts
+# สัปดาห์ที่ 10: Advanced Layouts
 
 ## กิจกรรมปฏิบัติ
 [Project] Sticky Nav & Badges

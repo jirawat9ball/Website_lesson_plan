@@ -1,4 +1,4 @@
-# สัปดาห์ที่ 8: Midterm Checkpoint
+# สัปดาห์ที่ 9: Midterm Checkpoint
 
 ## กิจกรรมปฏิบัติ
 🎯 [Capstone 1] Online Resume

@@ -1,4 +1,4 @@
-# สัปดาห์ที่ 6: CSS Properties (1)
+# สัปดาห์ที่ 7: CSS Properties (1)
 
 ## กิจกรรมปฏิบัติ
 [Project] Typography Redesign

@@ -1,4 +1,4 @@
-# สัปดาห์ที่ 11: Grid
+# สัปดาห์ที่ 12: Grid
 
 ## กิจกรรมปฏิบัติ
 [Project] Magazine Layout
