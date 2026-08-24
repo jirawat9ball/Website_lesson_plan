@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property Example</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .container {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .box {
+            padding: 10px;
+            margin: 5px;
+            border: 1px dashed #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ตัวอย่างการใช้งาน CSS Display</h1>
+
+    <div class="container">
+        <h2>1. Display: Block (ค่าเริ่มต้นของ &lt;div&gt;)</h2>
+        <p>กินพื้นที่ความกว้างเต็มบรรทัด (ถ้าไม่กำหนด width) และจะดันให้ element ถัดไปต้องขึ้นบรรทัดใหม่เสมอ</p>
+        <div class="box" style="background-color: lightblue; width: 200px;">
+            Block 1 (ตัวถัดไปต้องขึ้นบรรทัดใหม่)
+        </div>
+        <div class="box" style="background-color: lightgray;">
+            Block 2
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>2. Display: Inline (ค่าเริ่มต้นของ &lt;span&gt;)</h2>
+        <p>กินพื้นที่ความกว้างเท่าที่จำเป็นตามเนื้อหาข้างใน ไม่ขึ้นบรรทัดใหม่ และ<strong>ไม่สามารถกำหนดความกว้าง (width) หรือความสูง (height) ได้</strong></p>
+        <span class="box" style="background-color: lightgreen; width: 500px;">
+            Inline 1 (สั่งกว้าง 500px แต่ไม่เป็นผล)
+        </span>
+        <span class="box" style="background-color: lightgreen;">
+            Inline 2 (เรียงต่อกันในบรรทัดเดิม)
+        </span>
+    </div>
+
+    <div class="container">
+        <h2>3. Display: Inline-Block</h2>
+        <p>คุณสมบัติผสม คือเรียงต่อกันในบรรทัดเดิมได้ (เหมือน inline) แต่สามารถกำหนดความกว้าง (width) และความสูง (height) ได้ (เหมือน block)</p>
+        <div class="box" style="display: inline-block; background-color: #d8b4e2; width: 100px; height: 50px;">
+            กล่อง 1
+        </div>
+        <div class="box" style="display: inline-block; background-color: #d8b4e2; width: 150px; height: 80px;">
+            กล่อง 2 (อยู่บรรทัดเดียวกัน แต่ปรับขนาดได้)
+        </div>
+    </div>
+</body>
+
+</html>

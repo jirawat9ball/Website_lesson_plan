@@ -1,4 +1,4 @@
-# สัปดาห์ที่ 10: Flexbox
+# สัปดาห์ที่ 11: Flexbox
 
 ## กิจกรรมปฏิบัติ
 [Project] Photo Gallery

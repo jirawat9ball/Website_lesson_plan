@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Workshop</title>
+    <!-- Use Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Premium Color Palette */
+            --primary: #4F46E5;    /* Indigo */
+            --primary-hover: #4338CA;
+            --secondary: #10B981;  /* Emerald */
+            --accent: #F59E0B;     /* Amber */
+            --danger: #EF4444;     /* Red */
+            --dark: #1F2937;       /* Gray 900 */
+            --light: #F9FAFB;      /* Gray 50 */
+            --glass-bg: rgba(255, 255, 255, 0.8);
+        }
+        
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f4f6;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        .workshop-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .workshop-header h1 {
+            margin: 0 0 10px 0;
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            font-family: 'Kanit', sans-serif;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            background-color: white;
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        button.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary-hover);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+        }
+
+        /* =========================================
+           ส่วนหลักของ Workshop: Grid Container 
+           ========================================= */
+        .grid-container {
+            display: grid;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 60vh;
+            /* เพิ่ม Transition เพื่อให้เวลาสลับ Layout ดูมีมิติ */
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* สไตล์พื้นฐานของกล่องแต่ละใบ */
+        .grid-item {
+            padding: 30px;
+            border-radius: 16px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* เพิ่มลูกเล่น Effect ให้กล่อง */
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.2), transparent);
+            z-index: 1;
+        }
+        .grid-item span { z-index: 2; }
+
+        /* กำหนดพื้นที่ (grid-area) และสีให้แต่ละกล่อง */
+        .header  { background: linear-gradient(135deg, #6366f1, #4f46e5); grid-area: header; }
+        .sidebar { background: linear-gradient(135deg, #10b981, #059669); grid-area: sidebar; }
+        .content { background: linear-gradient(135deg, #f59e0b, #d97706); grid-area: content; }
+        .footer  { background: linear-gradient(135deg, #ef4444, #dc2626); grid-area: footer; }
+
+        /* 
+           =========================================
+           ตัวเลือก Layout ต่างๆ ที่ใช้สอน
+           หัวใจสำคัญคือการใช้ 'grid-template-areas' 
+           ========================================= 
+        */
+
+        /* Layout 1: แบบเว็บไซต์ทั่วไป (Sidebar ซ้าย) */
+        .layout-1 {
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 100px 1fr 80px;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+        }
+
+        /* Layout 2: สลับ Sidebar ไปทางขวา */
+        .layout-2 {
+            grid-template-columns: 1fr 250px;
+            grid-template-rows: 100px 1fr 80px;
+            grid-template-areas:
+                "header header"
+                "content sidebar"
+                "footer footer";
+        }
+
+        /* Layout 3: แบบ Web App (Sidebar เต็มความสูงด้านซ้าย) */
+        .layout-3 {
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 100px 1fr 80px;
+            grid-template-areas:
+                "sidebar header"
+                "sidebar content"
+                "sidebar footer";
+        }
+
+        /* Layout 4: แบบแสดงบนมือถือ (เรียงต่อกันแนวตั้ง) */
+        .layout-4 {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "header"
+                "content"
+                "sidebar"
+                "footer";
+        }
+
+        /* Layout 5: แบบ 3 คอลัมน์ (มี Sidebar ทั้งสองข้าง โดยใช้ Footer เป็น Sidebar ขวา) */
+        .layout-5 {
+            grid-template-columns: 250px 1fr 250px;
+            grid-template-rows: 100px 1fr;
+            grid-template-areas:
+                "header header header"
+                "sidebar content footer";
+        }
+
+        /* Layout 6: แบบสลับบนล่าง (Footer อยู่บน, Header อยู่ล่าง) */
+        .layout-6 {
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas:
+                "footer footer"
+                "sidebar content"
+                "header header";
+        }
+
+        /* Layout 7: แบบเรียงแนวนอน 4 คอลัมน์ */
+        .layout-7 {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 250px;
+            grid-template-areas:
+                "header sidebar content footer";
+        }
+
+        /* Layout 8: แบบตาราง (Grid 2x2 สลับตำแหน่ง) */
+        .layout-8 {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            grid-template-areas:
+                "header sidebar"
+                "footer content";
+        }
+
+        /* ส่วนกล่องโจทย์ปัญหาสำหรับนักเรียน */
+        .task-box {
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 16px;
+            max-width: 1000px;
+            margin: 40px auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--accent);
+        }
+        
+        .task-box h2 {
+            margin-top: 0;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        code {
+            background-color: rgba(0,0,0,0.05);
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: var(--danger);
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="workshop-header">
+        <h1>Workshop: CSS Grid Layout Controller</h1>
+        <p>ทดลองกดปุ่มด้านล่างเพื่อปรับเปลี่ยนคลาสของ Grid Container และสังเกตการเปลี่ยนแปลงของ <code>grid-template-areas</code></p>
+    </div>
+
+    <!-- ปุ่มสำหรับควบคุม Layout -->
+    <div class="controls">
+        <button class="active" onclick="changeLayout(1, this)">Layout 1 (Standard)</button>
+        <button onclick="changeLayout(2, this)">Layout 2 (Sidebar Right)</button>
+        <button onclick="changeLayout(3, this)">Layout 3 (Dashboard App)</button>
+        <button onclick="changeLayout(4, this)">Layout 4 (Mobile Stack)</button>
+        <button onclick="changeLayout(5, this)">Layout 5 (3 Columns)</button>
+        <button onclick="changeLayout(6, this)">Layout 6 (Inverted)</button>
+        <button onclick="changeLayout(7, this)">Layout 7 (Horizontal)</button>
+        <button onclick="changeLayout(8, this)">Layout 8 (2x2 Grid)</button>
+    </div>
+
+    <!-- Grid Container ที่แสดงผล -->
+    <div id="gridBox" class="grid-container layout-1">
+        <div class="grid-item header"><span>Header</span></div>
+        <div class="grid-item sidebar"><span>Sidebar</span></div>
+        <div class="grid-item content"><span>Main Content</span></div>
+        <div class="grid-item footer"><span>Footer</span></div>
+    </div>
+
+    <!-- กล่องมอบหมายงานให้นักเรียน -->
+    <div class="task-box">
+        <h2>🎯 ภารกิจสำหรับนักเรียน (Student Task)</h2>
+        <p>1. ให้เข้าไปแก้ไขไฟล์ HTML และเพิ่ม <strong>Layout 9 (คลาส <code>.layout-9</code>)</strong> ลงในส่วนของ CSS (<code>&lt;style&gt;</code>)</p>
+        <p>2. ออกแบบ <strong>Layout 9</strong> ให้ <code>Header</code> อยู่ตรงกลางด้านบน, ส่วน <code>Sidebar</code> ขนาบซ้าย, และ <code>Footer</code> ขนาบขวา (อิสระในการใช้จินตนาการจัด <code>grid-template-areas</code>)</p>
+        <p>3. เพิ่มปุ่ม <code>&lt;button&gt;</code> ใน HTML สำหรับกดเลือก <strong>Layout 9</strong></p>
+        <p><em>💡 คำใบ้: การใช้ <code>grid-template-areas</code> ช่วยให้คุณเหมือนต่อเลโก้ ลองเรียงชื่อกล่องให้เป็นตารางตามที่ต้องการ!</em></p>
+    </div>
+
+    <script>
+        // ฟังก์ชันสำหรับเปลี่ยน Layout
+        function changeLayout(layoutNumber, btn) {
+            // 1. เปลี่ยน Class ของ Grid Container
+            const gridBox = document.getElementById('gridBox');
+            gridBox.className = 'grid-container layout-' + layoutNumber;
+
+            // 2. อัปเดตสไตล์ของปุ่มที่ถูกกด (ให้มีสีทึบ)
+            const buttons = document.querySelectorAll('.controls button');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student - CSS Grid Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* 
+         * ==========================================
+         * แบบฝึกหัด CSS Grid Layout
+         * ให้นักเรียนเขียนโค้ด CSS สำหรับจัด Layout ด้านล่างนี้
+         * ==========================================
+         */
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f4f6;
+        }
+
+        /* 1. กำหนดให้ Container ทำหน้าที่เป็น Grid */
+        .grid-container {
+            /* TODO: ใส่คำสั่งเพื่อให้กล่องนี้เป็น Grid */
+            
+            
+            /* TODO: กำหนดช่องว่างระหว่างกล่อง (gap) */
+            
+            
+            /* (แถม) ตกแต่งให้กล่องอยู่ตรงกลาง */
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 400px;
+        }
+
+        /* ตกแต่งสีให้กล่องแต่ละใบเพื่อความสวยงาม */
+        .grid-item {
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 2. กำหนดพื้นที่ (grid-area) ให้กล่องแต่ละใบ */
+        .header  { 
+            background-color: #4F46E5; 
+            /* TODO: กำหนดชื่อพื้นที่ให้ Header */
+            
+        }
+        
+        .sidebar { 
+            background-color: #10B981; 
+            /* TODO: กำหนดชื่อพื้นที่ให้ Sidebar */
+            
+        }
+        
+        .content { 
+            background-color: #F59E0B; 
+            /* TODO: กำหนดชื่อพื้นที่ให้ Content */
+            
+        }
+        
+        .footer  { 
+            background-color: #EF4444; 
+            /* TODO: กำหนดชื่อพื้นที่ให้ Footer */
+            
+        }
+
+        /* 
+         * 3. จัด Layout โดยใช้ grid-template-areas 
+         * (เขียนไว้ใน .grid-container หรือสร้างคลาสใหม่ก็ได้)
+         */
+        
+        /* 
+           ตัวอย่าง Layout 1 ที่ต้องการ:
+           -----------------------
+           |   Header   | Header |
+           -----------------------
+           |  Sidebar   | Content|
+           -----------------------
+           |   Footer   | Footer |
+           -----------------------
+           
+           ==========================================
+           โจทย์เพิ่มเติม (ลองปรับ grid-template-areas เป็นแบบอื่นๆ):
+
+           โจทย์ 2: สลับ Sidebar ไปขวา
+           -----------------------
+           |   Header   | Header |
+           -----------------------
+           |  Content   | Sidebar|
+           -----------------------
+           |   Footer   | Footer |
+           -----------------------
+
+           โจทย์ 3: Sidebar เต็มความสูง
+           -----------------------
+           |  Sidebar   | Header |
+           -----------------------
+           |  Sidebar   | Content|
+           -----------------------
+           |  Sidebar   | Footer |
+           -----------------------
+
+           โจทย์ 4: Mobile (แนวตั้ง)
+           -----------------------
+           |       Header        |
+           -----------------------
+           |      Content        |
+           -----------------------
+           |      Sidebar        |
+           -----------------------
+           |       Footer        |
+           -----------------------
+
+           โจทย์ 5: 3 คอลัมน์ (Footer เป็น Sidebar ขวา)
+           -------------------------------
+           |   Header | Header | Header  |
+           -------------------------------
+           |  Sidebar | Content| Footer  |
+           -------------------------------
+
+           โจทย์ 6: แบบสลับบนล่าง
+           -----------------------
+           |   Footer   | Footer |
+           -----------------------
+           |  Sidebar   | Content|
+           -----------------------
+           |   Header   | Header |
+           -----------------------
+
+           โจทย์ 7: 4 คอลัมน์ (แนวนอน)
+           ---------------------------------------
+           | Header | Sidebar | Content | Footer |
+           ---------------------------------------
+
+           โจทย์ 8: 2x2 Grid แบบตาราง
+           -----------------------
+           |   Header   | Sidebar|
+           -----------------------
+           |   Footer   | Content|
+           -----------------------
+        */
+
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">CSS Grid Workshop - Student</h1>
+    
+    <!-- 
+        โครงสร้าง HTML พื้นฐาน 
+        มีกล่องใหญ่ (Container) และกล่องเล็กด้านใน 4 ใบ
+    -->
+    <div class="grid-container">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item sidebar">Sidebar</div>
+        <div class="grid-item content">Main Content</div>
+        <div class="grid-item footer">Footer</div>
+    </div>
+
+</body>
+</html>
