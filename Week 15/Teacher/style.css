@@ -1,3 +1,4 @@
+/* คัดลอก CSS จาก Week 14 มาทั้งหมด และเพิ่มส่วนของ Instructors */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap');
 
 :root {
@@ -85,109 +86,71 @@ footer {
   padding: 60px 20px;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  background-color: var(--primary);
-  color: white;
-  padding: 12px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--text);
-  border: 1px solid var(--text);
-}
-
-.btn-outline:hover {
-  background-color: var(--text);
-  color: white;
-}
-
-/* --- Index Page --- */
-.hero {
+/* --- Instructors Page --- */
+.instructor-profile {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 60px;
-  margin-bottom: 80px;
+  align-items: center;
 }
 
-.hero-text {
-  flex: 1;
+.instructor-profile img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%; /* ทำให้รูปภาพเป็นวงกลม */
+  object-fit: cover; /* จัดการภาพให้สมมาตร ไม่เบี้ยว */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.hero-text .highlight {
+.instructor-info h1 {
   color: var(--primary);
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 15px;
-}
-
-.hero-text h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
+  font-size: 4rem;
+  line-height: 1.1;
   margin-bottom: 30px;
-  font-weight: 700;
 }
 
-.hero-buttons {
+.quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 40px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.programs {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
-.hero-img {
-  flex: 1;
-  width: 100%;
+.programs .icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
   border-radius: 15px;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.promo-section {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.promo-section h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.promo-section p {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-.promo-section h2 {
-  font-size: 3rem;
-  color: var(--primary);
-  margin-top: 10px;
+.programs .icon-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .hero {
+  .instructor-profile {
     flex-direction: column;
   }
-  .hero-img {
+  .instructor-profile img {
     width: 100%;
+    max-width: 400px;
     height: auto;
-  }
-}
-@media (max-width: 768px) {
-  header nav {
-    display: none;
+    aspect-ratio: 1/1; /* บังคับให้เป็นจัตุรัสเมื่อย่อขนาดจอ */
   }
 }

@@ -3,129 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 13: Premium Product Landing Page</title>
-    <!-- 1. ดึงข้อมูล Bootstrap 5 CSS CDN -->
+    <title>Program Learning Platform - Index</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- โหลดฟอนต์ Google Fonts เพื่อความพรีเมียม -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- 2. ดึงสไตล์ของตัวเอง (Override CSS) วางไว้ด้านล่างของ Bootstrap CDN เสมอ -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+            color: #333;
+        }
+        /* Custom Colors & Utilities */
+        .text-brand-blue { color: #007bff; }
+        .bg-brand-blue { background-color: #007bff; }
+        .footer-bg { background-color: #0d6efd; color: white; }
+        
+        /* Navbar */
+        .nav-link { color: #666; font-weight: 500; }
+        .nav-link.active { color: #333; font-weight: 700; }
+        
+        /* Hero Section */
+        .hero-title { font-size: 3.5rem; font-weight: 700; line-height: 1.2; }
+        
+        /* Cards */
+        .card { border-radius: 8px; border: 1px solid #eaeaea; }
+        .card-img-top { border-top-left-radius: 8px; border-top-right-radius: 8px; height: 200px; object-fit: cover; }
+        
+        /* Footer Links */
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: block;
+            transition: color 0.3s;
+        }
+        .footer-link:hover { color: white; }
+    </style>
 </head>
 <body>
 
-    <!-- ─── 1. NAVBAR (แถบเมนูนำทางสำเร็จรูป) ─── -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <!-- ─── 1. NAVBAR ─── -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
         <div class="container">
-            <a class="navbar-brand font-outfit fw-bold" href="#">🪐 ASTRO TECH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">หน้าแรก</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">คุณสมบัติ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">สินค้าแนะนำ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อเรา</a></li>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Index</a></li>
+                    <li class="nav-item"><a class="nav-link" href="course.html">Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="instructors.html">Instructors</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            Student Showcase <i class="fa-solid fa-caret-down text-primary ms-1"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">News & Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                 </ul>
+                <div class="d-flex align-items-center">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa-solid fa-gear fa-stack-2x text-secondary"></i>
+                        <i class="fa-solid fa-code fa-stack-1x text-white fa-inverse" style="font-size: 0.6em;"></i>
+                    </span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- ─── 2. CAROUSEL (สไลด์โชว์รูปภาพโฆษณา) ─── -->
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('https://picsum.photos/id/48/1920/600'); background-size: cover; background-position: center; height: 450px;">
-                <div class="carousel-caption d-none d-md-block bg-dark-overlay rounded-4 p-4">
-                    <h2 class="fw-bold">ท่องอวกาศด้วยเทคโนโลยีแห่งอนาคต</h2>
-                    <p>ค้นหาคอลเลกชันอุปกรณ์ระดับโปรสำหรับการสำรวจอวกาศแบบไร้ขีดจำกัด</p>
+    <!-- ─── 2. HERO SECTION ─── -->
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- ซ้าย: รูปภาพนักเรียน -->
+            <div class="col-lg-6 mb-4 mb-lg-0 pe-lg-5">
+                <img src="https://picsum.photos/id/180/800/600" class="img-fluid rounded-2 shadow-sm" alt="Student learning">
+            </div>
+            <!-- ขวา: ข้อความและปุ่ม -->
+            <div class="col-lg-6 text-lg-end text-center ps-lg-4">
+                <p class="text-brand-blue fw-bold text-uppercase mb-2" style="letter-spacing: 5px;">a b o u t &nbsp; u s</p>
+                <h1 class="hero-title mb-4">We are the top<br>Program Learning<br>Platform</h1>
+                <div class="d-flex justify-content-lg-end justify-content-center gap-3">
+                    <a href="#" class="btn btn-primary px-4 py-2 rounded-1 fw-bold border-0" style="background-color: #007bff;">Buy now</a>
+                    <a href="#" class="btn btn-dark px-4 py-2 rounded-1 fw-bold border-0">Show more</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('https://picsum.photos/id/119/1920/600'); background-size: cover; background-position: center; height: 450px;">
-                <div class="carousel-caption d-none d-md-block bg-dark-overlay rounded-4 p-4">
-                    <h2 class="fw-bold">นวัตกรรมระดับโลกในมือคุณ</h2>
-                    <p>สินค้าลิขสิทธิ์แท้พร้อมการันตีคุณภาพและความทนทานระดับสูงสุด</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-
-    <!-- ─── 3. GRID SYSTEM & CARDS (ระบบแบ่งหน้าจอและกล่องสินค้า) ─── -->
-    <div class="container my-5" id="products">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">🚀 สินค้าแนะนำประจำสัปดาห์</h2>
-            <p class="text-muted">เลือกอุปกรณ์อัจฉริยะที่เหมาะกับการเดินทางของคุณวันนี้</p>
-        </div>
-
-        <!-- แถวของสินค้า (1 Row) -->
-        <div class="row g-4">
-            
-            <!-- การ์ดสินค้าชิ้นที่ 1 (แบ่ง 3 ส่วนบนจอใหญ่ col-lg-4, 2 ส่วนบนจอแท็บเล็ต col-md-6, เต็มจอคอลัมน์เดียวบนมือถือ col-12) -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card h-100 shadow-sm border-0 product-card">
-                    <img src="https://picsum.photos/id/0/400/250" class="card-img-top rounded-top-4" alt="Astro Laptop">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">AstroBook Pro</h5>
-                        <p class="card-text text-muted flex-grow-1">คอมพิวเตอร์พกพาสเปกอวกาศ ประมวลผลรวดเร็วด้วยระบบ Quantum Core และแบตเตอรี่โซลาร์ทนทานพิเศษ</p>
-                        <div class="mt-3">
-                            <span class="fs-5 fw-bold text-gradient">฿45,900</span>
-                            <a href="#" class="btn btn-brand float-end">สั่งซื้อเลย</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- การ์ดสินค้าชิ้นที่ 2 -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card h-100 shadow-sm border-0 product-card">
-                    <img src="https://picsum.photos/id/160/400/250" class="card-img-top rounded-top-4" alt="Galaxy Watch">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Nebula Watch 5</h5>
-                        <p class="card-text text-muted flex-grow-1">นาฬิกาข้อมือระบบนำร่องวิเคราะห์ดัชนีชีพ ตรวจสอบสนามแม่เหล็ก และเชื่อมต่อแผนที่ดาราศาสตร์แบบเรียลไทม์</p>
-                        <div class="mt-3">
-                            <span class="fs-5 fw-bold text-gradient">฿12,500</span>
-                            <a href="#" class="btn btn-brand float-end">สั่งซื้อเลย</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- การ์ดสินค้าชิ้นที่ 3 -->
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card h-100 shadow-sm border-0 product-card">
-                    <img src="https://picsum.photos/id/3/400/250" class="card-img-top rounded-top-4" alt="Quantum Device">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold">Cosmos Router X</h5>
-                        <p class="card-text text-muted flex-grow-1">เราเตอร์กระจายสัญญาณด้วยระบบควอนตัมเกตเวย์ ความเร็วไร้ขีดจำกัด รองรับการติดต่อสื่อสารข้ามดาวเคราะห์</p>
-                        <div class="mt-3">
-                            <span class="fs-5 fw-bold text-gradient">฿18,900</span>
-                            <a href="#" class="btn btn-brand float-end">สั่งซื้อเลย</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <!-- ─── 4. CONTACT FOOTER (ส่วนติดต่อและลิขสิทธิ์ท้ายหน้า) ─── -->
-    <footer class="bg-dark text-light py-4 text-center mt-5" id="contact">
+    <!-- ─── 3. MIDDLE TEXT (Slogan) ─── -->
+    <div class="container text-center my-5 py-5">
+        <h2 class="fw-bold mb-3 fs-2 text-dark">เปลี่ยนไอเดียให้เป็นผลงาน</h2>
+        <p class="fs-5 mb-2 text-dark">เรียนรู้จากการลงมือทำจริงก้าวสู่</p>
+        <h1 class="text-brand-blue fw-bold" style="font-size: 4rem;">มืออาชีพ</h1>
+    </div>
+
+    <!-- ─── 4. LARGE CLASSROOM SLIDER ─── -->
+    <div class="container-fluid px-0 mb-5">
+        <div id="classroomCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#classroomCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#classroomCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#classroomCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/id/20/1920/600" class="d-block w-100" style="max-height: 500px; object-fit: cover; object-position: center;" alt="Classroom Slide 1">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/21/1920/600" class="d-block w-100" style="max-height: 500px; object-fit: cover; object-position: center;" alt="Classroom Slide 2">
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/36/1920/600" class="d-block w-100" style="max-height: 500px; object-fit: cover; object-position: center;" alt="Classroom Slide 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#classroomCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#classroomCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ─── 5. COURSE SECTION ─── -->
+    <div class="container my-5 pt-4 pb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-brand-blue fw-bold m-0" style="font-size: 3rem;">Course</h2>
+            <a href="#" class="btn btn-dark btn-sm px-3 rounded-1">more</a>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-1 shadow-sm p-3">
+                    <img src="https://picsum.photos/id/0/400/250" class="card-img-top mb-3" alt="VR Crusoe">
+                    <div class="card-body p-0">
+                        <p class="mb-1 text-dark" style="font-size: 0.85rem;">VR Crusoe</p>
+                        <h6 class="fw-bold mb-1">$35</h6>
+                        <small class="text-muted" style="font-size: 0.75rem;">Body text.</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-1 shadow-sm p-3">
+                    <img src="https://picsum.photos/id/160/400/250" class="card-img-top mb-3" alt="3D Crusoe">
+                    <div class="card-body p-0">
+                        <p class="mb-1 text-dark" style="font-size: 0.85rem;">3D Crusoe</p>
+                        <h6 class="fw-bold mb-1">$25</h6>
+                        <small class="text-muted" style="font-size: 0.75rem;">Body text.</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-1 shadow-sm p-3">
+                    <img src="https://picsum.photos/id/3/400/250" class="card-img-top mb-3" alt="Programming Crusoe">
+                    <div class="card-body p-0">
+                        <p class="mb-1 text-dark" style="font-size: 0.85rem;">Programming Crusoe</p>
+                        <h6 class="fw-bold mb-1">$30</h6>
+                        <small class="text-muted" style="font-size: 0.75rem;">Body text.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── 6. FOOTER ─── -->
+    <footer class="footer-bg pt-5 pb-4 mt-5">
         <div class="container">
-            <p class="mb-2">🪐 ASTRO TECH - โรงเรียนเพลินพัฒนา ชั้นมัธยมศึกษาปีที่ 5</p>
-            <p class="small text-muted mb-0">© 2026 Astro Tech. พัฒนาและออกแบบหน้าเว็บด้วย Bootstrap 5</p>
+            <div class="row">
+                <!-- Logo & Socials -->
+                <div class="col-lg-3 mb-4">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-layer-group fs-2 text-white"></i>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white text-decoration-none fs-5"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="text-white text-decoration-none fs-5"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white text-decoration-none fs-5"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="text-white text-decoration-none fs-5"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links Column 1 -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3 fs-6">Use cases</h6>
+                    <a href="#" class="footer-link">UI design</a>
+                    <a href="#" class="footer-link">UX design</a>
+                    <a href="#" class="footer-link">Wireframing</a>
+                    <a href="#" class="footer-link">Diagramming</a>
+                    <a href="#" class="footer-link">Brainstorming</a>
+                    <a href="#" class="footer-link">Online whiteboard</a>
+                    <a href="#" class="footer-link">Team collaboration</a>
+                </div>
+                
+                <!-- Links Column 2 -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3 fs-6">Explore</h6>
+                    <a href="#" class="footer-link">Design</a>
+                    <a href="#" class="footer-link">Prototyping</a>
+                    <a href="#" class="footer-link">Development features</a>
+                    <a href="#" class="footer-link">Design systems</a>
+                    <a href="#" class="footer-link">Collaboration features</a>
+                    <a href="#" class="footer-link">Design process</a>
+                    <a href="#" class="footer-link">FigJam</a>
+                </div>
+                
+                <!-- Links Column 3 -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3 fs-6">Resources</h6>
+                    <a href="#" class="footer-link">Blog</a>
+                    <a href="#" class="footer-link">Best practices</a>
+                    <a href="#" class="footer-link">Colors</a>
+                    <a href="#" class="footer-link">Color wheel</a>
+                    <a href="#" class="footer-link">Support</a>
+                    <a href="#" class="footer-link">Developers</a>
+                    <a href="#" class="footer-link">Resource library</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- 3. ดึงข้อมูล Bootstrap 5 Javascript Bundle CDN (เพื่อให้ Carousel และปุ่มแฮมเบอร์เกอร์ทำงานได้จริง) -->
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
