@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form (สำหรับฝึกหัด)</title>
+    <!-- Bootstrap 5 CSS (นำเข้า CSS ของ Bootstrap จากอินเทอร์เน็ต) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- TODO 1: ใช้คลาสของ Bootstrap จัดกล่องให้อยู่ตรงกลางและเว้นขอบซ้ายขวา -->
+    <div class="___ mt-5">
+        <h2 class="mb-4">ตัวอย่างฟอร์ม Bootstrap 5 (แบบฝึกหัด)</h2>
+        
+        <form>
+            <!-- ช่องกรอกอีเมลพื้นฐาน -->
+            <!-- TODO 2: ใช้คลาส Utility เว้นระยะห่างบรรทัดด้านล่าง 3 ระดับ (Margin Bottom) -->
+            <div class="___">
+                <!-- TODO 3: ใส่คลาสสำหรับป้ายกำกับ (Label) ของ Bootstrap -->
+                <label for="exampleEmail" class="___">Email address</label>
+                <!-- TODO 4: ใส่คลาสหัวใจสำคัญ! ที่ทำให้ช่องกรอกกว้าง 100% มีขอบมน และเรืองแสงตอนคลิก -->
+                <input type="email" class="___" id="exampleEmail" placeholder="name@example.com">
+                <div class="form-text">เราจะไม่เปิดเผยอีเมลของคุณให้ใครรู้</div>
+            </div>
+
+            <!-- Dropdown Select -->
+            <div class="mb-3">
+                <label for="exampleSelect" class="form-label">เลือกประเภท</label>
+                <!-- TODO 5: ใส่คลาสเฉพาะสำหรับช่องเลือก Dropdown ของ Bootstrap -->
+                <select class="___" id="exampleSelect">
+                    <option selected>เปิดเมนูเพื่อเลือก</option>
+                    <option value="1">ทั่วไป</option>
+                    <option value="2">ด่วน</option>
+                </select>
+            </div>
+
+            <!-- Input Group (รวมไอคอนกับช่องกรอก) -->
+            <!-- TODO 6: ใส่คลาสสำหรับจัดกลุ่มไอคอน (@) ให้แนบติดกับช่องกรอกข้อความ -->
+            <div class="___ mb-3">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" placeholder="Username">
+            </div>
+
+            <!-- Floating Label -->
+            <!-- TODO 7: ใส่คลาสสำหรับสร้างเอฟเฟกต์ป้ายกำกับลอยขึ้นเมื่อผู้ใช้คลิกพิมพ์ -->
+            <div class="___ mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <!-- Switch Checkbox -->
+            <div class="form-check form-switch mb-3">
+                <!-- TODO 8: ใส่คลาสสำหรับตัวกล่อง Checkbox -->
+                <input class="___" type="checkbox" id="flexSwitchCheckChecked" checked>
+                <!-- TODO 9: ใส่คลาสสำหรับป้ายกำกับข้อความของ Checkbox -->
+                <label class="___" for="flexSwitchCheckChecked">รับการแจ้งเตือน</label>
+            </div>
+
+            <!-- TODO 10: ใส่คลาส 2 ตัว 1) ทำปุ่มพื้นฐาน 2) เปลี่ยนปุ่มเป็นสีน้ำเงินหลัก (Primary) -->
+            <button type="submit" class="___ ___">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

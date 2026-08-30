@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla CSS Form (สำหรับฝึกหัด)</title>
+    <style>
+        /* โครงสร้างพื้นฐานของหน้าเว็บ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            /* TODO 1: ใช้คำสั่งจัดให้อยู่กึ่งกลางหน้าจอด้วย Flexbox */
+            
+            
+        }
+
+        /* กล่องคอนเทนเนอร์หลัก */
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333333;
+            text-align: center;
+        }
+
+        /* การเว้นระยะห่างแต่ละช่องกรอกข้อมูล */
+        .form-group {
+            /* TODO 2: เว้นระยะห่างด้านล่าง (Margin) 20px */
+            
+        }
+
+        /* ป้ายกำกับ (Label) */
+        label {
+            /* TODO 3: ทำให้ label แสดงผลแบบบล็อก (Block) จะได้อยู่คนละบรรทัดกับช่อง input */
+            
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        /* ช่องกรอกข้อมูลพื้นฐาน (Input & Select) */
+        /* TODO 4: ใส่ CSS Selectors เลือก input เฉพาะ type text, email, password และ select */
+        ___,
+        ___,
+        ___,
+        ___ {
+            /* TODO 5: กำหนดความกว้างให้เต็มกล่อง 100% */
+            
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            /* TODO 6: คำสั่งที่ป้องกันไม่ให้ padding ดันขนาดกล่องให้ทะลุ 100% */
+            
+            font-size: 16px;
+            transition: border-color 0.2s; /* เพิ่มความสมูทตอนคลิก */
+        }
+
+        /* เปลี่ยนสีขอบเมื่อผู้ใช้คลิกช่องกรอก (Focus State) */
+        /* TODO 7: ใช้ Pseudo-class เมื่อช่องกรอกถูกคลิก (focus) */
+        ___,
+        ___ {
+            border-color: #0d6efd;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25); /* สร้างเอฟเฟกต์เรืองแสง */
+        }
+
+        /* คำอธิบายข้อความตัวเล็กใต้ช่องกรอก */
+        .form-text {
+            font-size: 13px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        /* --- การทำ Input Group (ช่องกรอกที่มีไอคอนติดกัน) --- */
+        .input-group {
+            /* TODO 8: ใช้คำสั่งใดเพื่อเรียงไอคอนกับช่องให้อยู่บรรทัดเดียวกัน? */
+            
+        }
+        
+        .input-group-text {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-right: none; /* ลบขอบด้านขวาออกเพื่อให้ดูเชื่อมต่อกับช่องกรอก */
+            padding: 10px 15px;
+            border-radius: 4px 0 0 4px; /* โค้งเฉพาะมุมซ้าย */
+            color: #495057;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group input {
+            border-radius: 0 4px 4px 0; /* โค้งเฉพาะมุมขวา */
+        }
+
+        /* --- Checkbox --- */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* ระยะห่างระหว่างกล่องติ๊กกับตัวหนังสือ */
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0; /* ยกเลิกระยะห่างด้านล่างที่ตั้งไว้ใน label หลัก */
+            font-weight: normal;
+            cursor: pointer; /* ทำให้เมาส์เปลี่ยนเป็นรูปมือเวลานำไปชี้ */
+        }
+
+        /* --- ปุ่ม Submit --- */
+        .btn-submit {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+
+        /* เปลี่ยนสีเมื่อเอาเมาส์ชี้ปุ่ม */
+        .btn-submit:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>ตัวอย่างฟอร์ม (แบบฝึกหัด)</h2>
+        
+        <!-- TODO 9: สร้างแท็กสำหรับครอบฟอร์มทั้งหมด -->
+        ___
+            <!-- ช่องกรอกอีเมลพื้นฐาน -->
+            <div class="form-group">
+                <label for="exampleEmail">Email address</label>
+                <!-- TODO 10: สร้างช่องกรอกอีเมล และใส่ข้อความจางๆ (Placeholder) ว่า name@example.com -->
+                
+                <div class="form-text">เราจะไม่เปิดเผยอีเมลของคุณให้ใครรู้</div>
+            </div>
+
+            <!-- Dropdown Select -->
+            <div class="form-group">
+                <label for="exampleSelect">เลือกประเภท</label>
+                <!-- TODO 11: สร้างแท็กสำหรับทำ Dropdown -->
+                ___ id="exampleSelect">
+                    <option selected>เปิดเมนูเพื่อเลือก</option>
+                    <option value="1">ทั่วไป</option>
+                    <option value="2">ด่วน</option>
+                ___
+            </div>
+
+            <!-- Input Group (รวมไอคอนกับช่องกรอก) -->
+            <div class="form-group">
+                <label>Username</label>
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <!-- TODO 12: สร้างช่องกรอกข้อความธรรมดา และใส่ Placeholder ว่า Username -->
+                    
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <!-- TODO 13: สร้างช่องกรอกรหัสผ่าน (ที่เวลาพิมพ์จะเป็นจุดดำๆ) -->
+                
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-group checkbox-group">
+                <!-- TODO 14: สร้างช่องติ๊ก (Checkbox) และระบุ id เป็น basicCheckbox พร้อมตั้งให้เลือกไว้แต่แรก (checked) -->
+                
+                <label for="basicCheckbox">รับการแจ้งเตือน</label>
+            </div>
+
+            <!-- TODO 15: สร้างปุ่มสำหรับส่งฟอร์มประเภท Submit และใส่คลาส btn-submit -->
+            
+        ___
+    </div>
+
+</body>
+</html>
