@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructors Profile - แบบฝึกหัด</title>
+    <!-- TODO 1: เชื่อมโยงไฟล์ style_exercise.css เข้าสู่หน้าเว็บ -->
+    <link rel="stylesheet" href="style_exercise.css">
+</head>
+<body>
+    <!-- ส่วนหัวเว็บไซต์ (Navbar) -->
+    <header>
+        <nav>
+            <!-- TODO 2: ใส่ชื่อไฟล์ใน href เพื่อให้ลิงก์ไปยังหน้าต่างๆ ได้ถูกต้อง -->
+            <!-- และเพิ่ม class="active" ให้กับหน้าที่กำลังเปิดอยู่ (Instructors) -->
+            <a href="index.html">Index</a>
+            <a href="course.html">Course</a>
+            <a href="instructors.html" class="active">Instructors</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="logo-icon">⚙️</div>
+    </header>
+
+    <!-- เนื้อหาหลักของหน้า Instructors -->
+    <main class="container">
+        <!-- กล่องครอบข้อมูลโปรไฟล์ผู้สอน (แบ่งเป็น 2 ฝั่งด้วย Flexbox) -->
+        <section class="instructor-profile">
+            
+            <!-- ฝั่งซ้าย: รูปภาพผู้สอน -->
+            <!-- TODO 3: นำรูปภาพผู้สอนมาใส่ และชี้ Path ไปยังโฟลเดอร์ images/ เช่น images/instructor.jpg หรือใช้ URL ตัวอย่าง -->
+            <img src="https://picsum.photos/400/400?random=10" alt="รูปโปรไฟล์ผู้สอน" class="profile-img">
+
+            <!-- ฝั่งขวา: รายละเอียดประวัติและทักษะ -->
+            <div class="instructor-info">
+                <!-- TODO 4: ใส่ชื่อและนามสกุลของผู้สอน (ใช้แท็ก <h1>) -->
+                <h1>ชื่อผู้สอน<br>นามสกุลผู้สอน</h1>
+
+                <!-- TODO 5: ใส่คำคม ปรัชญา หรือคำแนะนำประจำตัวผู้สอน -->
+                <p class="quote">"มุ่งมั่นพัฒนาทักษะการเขียนโค้ด เรียนรู้สิ่งใหม่ๆ ก้าวสู่การเป็นนักพัฒนาเว็บมืออาชีพ"</p>
+                
+                <!-- หัวข้อแสดงโปรแกรมหรือทักษะที่เชี่ยวชาญ -->
+                <h3>program</h3>
+                
+                <!-- TODO 6: กล่องแสดงไอคอนโปรแกรมต่างๆ จัดเรียงด้วย Flexbox -->
+                <div class="programs">
+                    <!-- กล่องไอคอนแต่ละโปรแกรม (icon-box) -->
+                    <div class="icon-box"><img src="https://picsum.photos/40/40?random=11" alt="PS"></div>
+                    <div class="icon-box"><img src="https://picsum.photos/40/40?random=12" alt="Ai"></div>
+                    <div class="icon-box"><img src="https://picsum.photos/40/40?random=13" alt="Pr"></div>
+                    <div class="icon-box"><img src="https://picsum.photos/40/40?random=14" alt="HTML5"></div>
+                    <div class="icon-box"><img src="https://picsum.photos/40/40?random=15" alt="CSS3"></div>
+                    <div class="icon-box"><img src="https://picsum.photos/40/40?random=16" alt="JS"></div>
+                </div>
+
+                <!-- หัวข้อแสดงผลงานที่เคยสร้าง -->
+                <h3>product</h3>
+                <!-- TODO 7: ใส่รายการผลงานสั้นๆ เช่น เว็บไซต์ เกม หรืองานกราฟิก -->
+                <p>Website Development / Mini Game / Graphic Design</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ส่วนท้ายเว็บไซต์ (Footer) -->
+    <footer>
+        <div class="footer-col">
+            <p><strong>CodeCraft Academy</strong></p>
+            <p>สถาบันสอนพัฒนาเว็บไซต์ระดับมัธยม</p>
+        </div>
+        <div class="footer-col">
+            <h4>Use cases</h4>
+            <a href="#">UI design</a>
+            <a href="#">Web Development</a>
+        </div>
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="#">Design System</a>
+            <a href="#">Prototypes</a>
+        </div>
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#">Blog</a>
+            <a href="#">Cheat Sheets</a>
+        </div>
+    </footer>
+</body>
+</html>

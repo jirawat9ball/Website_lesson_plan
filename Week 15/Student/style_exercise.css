@@ -1,0 +1,218 @@
+/* ========================================================
+   CSS แบบฝึกหัด: สัปดาห์ที่ 15 (Instructors Page & Site Assembly)
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #007bff;
+  --text: #333333;
+  --bg: #ffffff;
+  --light-bg: #f8f9fa;
+  --font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+/* ----------------- Header & Navbar ----------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--bg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+header nav a {
+  text-decoration: none;
+  color: #666;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* TODO 1: แต่งสีเมื่อเมาส์ชี้ (hover) และสถานะของหน้าที่กำลังเปิดอยู่ (active) */
+/* แนะนำ: ให้เปลี่ยนสีข้อความเป็น var(--primary) และใส่เส้นใต้ border-bottom */
+header nav a:hover, 
+header nav a.active {
+  /* ใส่โค้ดที่นี่ */
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 5px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+/* ----------------- Base Container ----------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* ----------------- Instructors Profile Layout ----------------- */
+/* TODO 2: จัดกล่อง .instructor-profile ให้เป็นแบบ Flexbox วางรูปภาพคู่กับข้อความ */
+.instructor-profile {
+  display: flex;
+  /* TODO: กำหนดระยะห่างระหว่างรูปกับข้อความ (gap) ประมาณ 60px */
+  gap: 60px;
+  /* TODO: จัดให้เนื้อหาอยู่กึ่งกลางแนวตั้ง */
+  align-items: center;
+}
+
+/* TODO 3: เทคนิคแปลงภาพโปรไฟล์ให้เป็นวงกลมสมบูรณ์แบบ (Circular Avatar) */
+.instructor-profile img.profile-img {
+  /* 1. กำหนดความกว้างและความสูงให้เท่ากัน เช่น 400px x 400px */
+  width: 400px;
+  height: 400px;
+
+  /* 2. สั่งให้ขอบโค้งมน 50% กลายเป็นวงกลม */
+  border-radius: 50%;
+
+  /* 3. สั่งให้ภาพปรับขนาดเต็มพื้นที่โดยไม่บิดเบี้ยวหรือเสียสัดส่วน */
+  object-fit: cover;
+
+  /* 4. เพิ่มเงาให้นุ่มนวลและมีมิติ */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ข้อความฝั่งขวา */
+.instructor-info h1 {
+  color: var(--primary);
+  font-size: 3.5rem;
+  line-height: 1.15;
+  margin-bottom: 25px;
+}
+
+.quote {
+  font-size: 1.35rem;
+  font-style: italic;
+  margin-bottom: 35px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.instructor-info h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* TODO 4: จัดเรียงไอคอนโปรแกรมด้วย Flexbox */
+.programs {
+  /* กำหนดให้แสดงผลแบบ flex */
+  display: flex;
+  /* ให้ไอคอนปัดขึ้นบรรทัดใหม่ได้เมื่อหน้าจอแคบลง */
+  flex-wrap: wrap;
+  /* เว้นระยะห่างระหว่างแต่ละไอคอน 15px */
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* TODO 5: ตกแต่งกล่องไอคอนแต่ละกล่อง (.icon-box) */
+.programs .icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  
+  /* จัดรูปไอคอนข้างในให้อยู่กึ่งกลางกล่องพอดี */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ปรับขนาดรูปไอคอนภายในกล่อง */
+.programs .icon-box img {
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* TODO 6 [Extra Challenge]: ใส่ลูกเล่นเมื่อนำเมาส์ไปชี้ที่กล่องไอคอน (Hover Effect) */
+.programs .icon-box:hover {
+  /* ยกกล่องลอยขึ้นเล็กน้อย และเพิ่มเงาให้เด่นชัด */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 123, 255, 0.2);
+  border-color: var(--primary);
+}
+
+/* ----------------- Footer ----------------- */
+footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 60px 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-col a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ----------------- Responsive สำหรับมือถือ ----------------- */
+@media (max-width: 900px) {
+  .instructor-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .instructor-profile img.profile-img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .programs {
+    justify-content: center;
+  }
+
+  .instructor-info h1 {
+    font-size: 2.5rem;
+  }
+}

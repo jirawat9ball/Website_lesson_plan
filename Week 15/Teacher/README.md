@@ -73,5 +73,20 @@ gantt
 *   ใต้คำคม ให้สร้างหัวข้อ "program" และนำไอคอนโปรแกรมต่างๆ มาวางเรียงกันโดยใช้ Flexbox
 *   สร้างหัวข้อ "product" และใส่ข้อความอธิบายย่อๆ ตามตัวอย่าง
 
-## โปรเจกต์ตัวอย่างและเฉลย
-*   **ไฟล์เฉลย**: ดูตัวอย่างโค้ด HTML/CSS เฉลยของคุณครูในโฟลเดอร์นี้ (`instructors.html`)
+## 📦 แหล่งข้อมูลและไฟล์ในสัปดาห์ที่ 15
+
+### สำหรับคุณครู (Teacher Materials)
+* 🎴 **สไลด์การสอน (11 Slides Framework):** [Slide_Deck_Week15.md](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/Slide_Deck_Week15.md) *(พร้อมนำเข้า NotebookLM เพื่อสร้างสไลด์และสคริปต์การสอน)*
+* 🧭 **คู่มือประกอบร่างเว็บและ Asset Management:** [Site_Assembly_Guide.md](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/Site_Assembly_Guide.md)
+* 💻 **ไฟล์เฉลยโค้ด HTML:** [instructors.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/instructors.html)
+* 🎨 **ไฟล์เฉลยสไตล์ CSS:** [style.css](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/style.css)
+* 🚀 **ไฟล์แบบฝึกหัด Bootstrap 5 (พร้อม TODOs & ช่องว่างคลาส):** [exercise_bootstrap.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/exercise_bootstrap.html)
+* 💡 **ไฟล์เฉลยสมบูรณ์ Bootstrap 5:** [ref_bootstrap.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/ref_bootstrap.html)
+
+### สำหรับนักเรียน (Student Materials)
+* 📄 **คู่มือปฏิบัติงานนักเรียน:** [Student/README.md](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/README.md)
+* 🚀 **แบบฝึกหัด Bootstrap 5 (พร้อม TODOs):** [Student/exercise_bootstrap.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/exercise_bootstrap.html)
+* 📝 **แบบฝึกหัด HTML (พร้อม TODOs):** [Student/exercise.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/exercise.html)
+* 🎨 **แบบฝึกหัด CSS (พร้อม TODOs):** [Student/style_exercise.css](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/style_exercise.css)
+* 📁 **โฟลเดอร์เก็บภาพ:** [Student/images/](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/images/)
+
