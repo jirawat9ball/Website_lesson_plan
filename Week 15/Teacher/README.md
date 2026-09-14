@@ -76,17 +76,23 @@ gantt
 ## 📦 แหล่งข้อมูลและไฟล์ในสัปดาห์ที่ 15
 
 ### สำหรับคุณครู (Teacher Materials)
-* 🎴 **สไลด์การสอน (11 Slides Framework):** [Slide_Deck_Week15.md](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/Slide_Deck_Week15.md) *(พร้อมนำเข้า NotebookLM เพื่อสร้างสไลด์และสคริปต์การสอน)*
-* 🧭 **คู่มือประกอบร่างเว็บและ Asset Management:** [Site_Assembly_Guide.md](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/Site_Assembly_Guide.md)
-* 💻 **ไฟล์เฉลยโค้ด HTML:** [instructors.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/instructors.html)
-* 🎨 **ไฟล์เฉลยสไตล์ CSS:** [style.css](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/style.css)
-* 🚀 **ไฟล์แบบฝึกหัด Bootstrap 5 (พร้อม TODOs & ช่องว่างคลาส):** [exercise_bootstrap.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/exercise_bootstrap.html)
-* 💡 **ไฟล์เฉลยสมบูรณ์ Bootstrap 5:** [ref_bootstrap.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Teacher/ref_bootstrap.html)
+* 🎴 **สไลด์การสอน (11 Slides Framework):** [Slide_Deck_Week15.md](./Slide_Deck_Week15.md) *(พร้อมนำเข้า NotebookLM เพื่อสร้างสไลด์และสคริปต์การสอน)*
+* 🧭 **คู่มือประกอบร่างเว็บและ Asset Management:** [Site_Assembly_Guide.md](./Site_Assembly_Guide.md)
+* 💻 **ไฟล์เฉลยโค้ด HTML:** [instructors.html](./instructors.html)
+* 🎨 **ไฟล์เฉลยสไตล์ CSS:** [style.css](./style.css)
+* 🚀 **ไฟล์แบบฝึกหัด Bootstrap 5 (พร้อม TODOs & ช่องว่างคลาส):** [exercise_bootstrap.html](./exercise_bootstrap.html)
+* 💡 **ไฟล์เฉลยสมบูรณ์ Bootstrap 5:** [ref_bootstrap.html](./ref_bootstrap.html)
 
 ### สำหรับนักเรียน (Student Materials)
-* 📄 **คู่มือปฏิบัติงานนักเรียน:** [Student/README.md](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/README.md)
-* 🚀 **แบบฝึกหัด Bootstrap 5 (พร้อม TODOs):** [Student/exercise_bootstrap.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/exercise_bootstrap.html)
-* 📝 **แบบฝึกหัด HTML (พร้อม TODOs):** [Student/exercise.html](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/exercise.html)
-* 🎨 **แบบฝึกหัด CSS (พร้อม TODOs):** [Student/style_exercise.css](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/style_exercise.css)
-* 📁 **โฟลเดอร์เก็บภาพ:** [Student/images/](file:///d:/Unity/Website_lesson_plan/Week%2015/Student/images/)
+* 📄 **คู่มือปฏิบัติงานนักเรียน:** [Student/README.md](../Student/README.md)
+* 🚀 **แบบฝึกหัด Bootstrap 5 (พร้อม TODOs):** [Student/exercise_bootstrap.html](../Student/exercise_bootstrap.html)
+* 📝 **แบบฝึกหัด HTML (พร้อม TODOs):** [Student/exercise.html](../Student/exercise.html)
+* 🎨 **แบบฝึกหัด CSS (พร้อม TODOs):** [Student/style_exercise.css](../Student/style_exercise.css)
+* 📁 **โฟลเดอร์เก็บภาพ:** [Student/images/](../Student/images/)
+
+---
+
+## 🚀 ก้าวต่อไปสู่สัปดาห์ที่ 16 (Bridge to Week 16: Shared Components & Hosting)
+*   **ปัญหาที่นักเรียนพบในสัปดาห์นี้:** การต้องคัดลอกโค้ด Navbar/Footer ไปแปะซ้ำๆ ใน 4 ไฟล์ เมื่อมีการแก้ไขลิงก์ ต้องเปิดแก้ทีละหน้า ซึ่งเสียเวลาและเกิดข้อผิดพลาดได้ง่าย
+*   **ทางออกในสัปดาห์ที่ 16:** นักเรียนจะได้เรียนรู้เทคนิคระดับมือโปรคือ **Shared Web Components (`components.js`)** ที่เขียน Navbar และ Footer ไว้ที่เดียว แล้วให้ทุกหน้าเรียกใช้ `<site-header>` และ `<site-footer>` ได้ทันที พร้อมนำขึ้นสู่โลกออนไลน์จริงด้วย **GitHub Pages**!
 

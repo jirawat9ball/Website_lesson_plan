@@ -11,22 +11,72 @@
 | สัปดาห์ที่ | หัวข้อการเรียนรู้ | กิจกรรมวันอังคาร (ทฤษฎี/ออกแบบ 45 นาที) | กิจกรรมวันพฤหัสบดี (ปฏิบัติการ 90 นาที) | ชิ้นงาน/โปรเจกต์ (Core & Extra) |
 | :---: | :--- | :--- | :--- | :--- |
 | **1** | Introduction to HTML | โครงสร้างพื้นฐาน HTML, โครงสร้างหน้าเว็บ แท็ก Heading & Paragraph | ลงมือเขียนโค้ดจัดโครงสร้างหน้าเว็บแรก | **[Project] Movie Ranking**<br>• Core: จัดอันดับหนัง 3 เรื่อง<br>• Extra: ใส่รูปโปสเตอร์และทำเป็น Top 5 |
-| **2** | HTML Forms | โครงสร้างแบบฟอร์มและการรับข้อมูล (HTML Forms), แท็ก &lt;form&gt;, &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt; | ฝึกสร้างแบบฟอร์มและจัดการอินพุตประเภทต่างๆ | **[Project] Club SignUp Form**<br>• Core: แบบฟอร์มลงทะเบียนพื้นฐานพร้อมฟิลด์ข้อความและอีเมล<br>• Extra: เพิ่ม Radio, Checkbox, Dropdown และปุ่มส่งข้อมูล |
-| **3** | Multi-Page Websites | โครงสร้าง HTML Boilerplate และระบบ Computer File Paths | เชื่อมโยงหลายหน้าเว็บเข้าหากันด้วยเมนู | **[Project] Personal Wiki**<br>• Core: เว็บ 3 หน้า ลิงก์เมนูเชื่อมโยงไปมา<br>• Extra: ฝังแท็ก `<audio>` หรือ `<video>` |
+| **2** | HTML Forms | โครงสร้างแบบฟอร์มและการรับข้อมูล (HTML Forms), แท็ก &lt;form&gt;, &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt; | ฝึกสร้างแบบฟอร์มและจัดการอินพุตประเภทต่างๆ | **[Project] Contact & Course Registration Form**<br>• Core: สร้างฟอร์มติดต่อ (Name, Email, Message) และ Dropdown ตัวเลือก<br>• Extra: ฟอร์มสั่งซื้อพร้อม Validate ข้อมูลเบื้องต้น |
+| **3** | Multi-Page Websites | โครงสร้าง HTML Boilerplate และระบบ Relative File Paths (`images/`) | วางผัง 4 หน้าเว็บหลัก และเชื่อมโยงเมนูนำทาง | **[Project] 4-Page Site Blueprint**<br>• Core: สร้าง 4 ไฟล์พื้นฐาน (`index`, `course`, `instructors`, `contact`) ลิงก์หากันครบ<br>• Extra: จัดระเบียบโฟลเดอร์ภาพ `images/` ป้องกันภาพแตก |
 | **4** | Introduction to JavaScript | แนะนำพื้นฐาน JS เปรียบเทียบกับระบบตู้กดน้ำอัตโนมัติ (ตัวแปร, การทำงาน) | เขียนฟังก์ชันดึงข้อมูล ดำเนินการ และแสดงผล | **[Project] 2-Digit Lottery Simulator**<br>• Core: ป้อนเลข 2 หลักและสุ่มตรวจรางวัลเลขท้าย 2 ตัว<br>• Extra: ตรวจรางวัลข้างเคียง (Near Miss) และเปลี่ยนสีข้อความ |
-| **5** | JavaScript Core Fundamentals | โครงสร้างข้อมูล (Array & Object), เงื่อนไข switch-case และการวนลูป for/while | เขียนฟังก์ชันและเชื่อมปุ่มด้วยระบบลูปอัจฉริยะ | **[Project] Rock-Paper-Scissors**<br>• Core: สุ่มเลือกจาก Array, แปลงค่าด้วย switch-case และสะสมคะแนนใน Object<br>• Extra: ใช้ for loop ผูก Event ล็อกปุ่ม และระบบเริ่มใหม่ |
-| **6** | Introduction to CSS | วิธีใส่ CSS (Inline, Internal, External) และ CSS Selectors | เรียนรู้การเข้าถึง Element และปรับสีเบื้องต้น | **[Project] Colour Vocab**<br>• Core: สมุดคำศัพท์สี ปรับสีตามคลาสคำศัพท์<br>• Extra: สลับ 2 ไฟล์ CSS เพื่อจำลองระบบสลับธีม |
-| **7** | CSS Properties (1) | เรื่องของสี (CSS Colors) และแบบอักษร (Google Fonts) | เรียนรู้การค้นหาฟอนต์ที่ตรงใจและการตั้งค่าสี | **[Project] Typography Redesign**<br>• Core: ปรับแต่งหน้าเว็บด้วย Google Fonts<br>• Extra: ใช้ Inspect Element ปรับเว็บโรงเรียน |
-| **8** | CSS Properties (2) | ทฤษฎีกล่อง (The CSS Box Model): Margin, Padding, Border | เรียนรู้การเว้นระยะและขอบเพื่อจัดระเบียบเนื้อหา | **[Project] Motivational Poster**<br>• Core: โปสเตอร์คำคมจัดกรอบสวยงาม<br>• Extra: ใช้ border-radius วาดรูปทรงด้วย CSS |
+| **5** | JavaScript Core Fundamentals | โครงสร้างข้อมูล (Array & Object), ฟังก์ชัน และแนวคิดลดโค้ดซ้ำ (DRY) | เขียนฟังก์ชันและเชื่อมปุ่มด้วยระบบลูปอัจฉริยะ | **[Project] Rock-Paper-Scissors**<br>• Core: สุ่มเลือกจาก Array, แปลงค่าด้วย switch-case และสะสมคะแนนใน Object<br>• Extra: ใช้ for loop ผูก Event ล็อกปุ่ม และระบบเริ่มใหม่ |
+| **6** | Introduction to CSS | วิธีใส่ CSS และการประกาศ CSS Variables (`:root { --brand-blue: #0066ff; }`) | เข้าถึง Element ปรับสี และฝึกสลับธีมด้วยตัวแปรเดียว | **[Project] Theme Switcher Basics**<br>• Core: สมุดคำศัพท์สี ปรับสีตามคลาสคำศัพท์<br>• Extra: เปลี่ยนค่า CSS Variables ใน `:root` เพื่อเปลี่ยนธีมทั้งหน้า |
+| **7** | CSS Properties (1) | เรื่องของสี (CSS Colors) และแบบอักษร (Google Fonts: Inter & Noto Sans) | ค้นหาฟอนต์ที่ตรงใจและการตั้งค่าสีแบรนด์ | **[Project] Typography Redesign**<br>• Core: ปรับแต่งหน้าเว็บด้วย Google Fonts (Inter + Noto Sans Thai)<br>• Extra: ใช้ Inspect Element ปรับเว็บโรงเรียน |
+| **8** | CSS Properties (2) | ทฤษฎีกล่อง (CSS Box Model), ภาพโปรไฟล์วงกลม และปุ่มแคปซูล | การเว้นระยะ Margin/Padding และตัดภาพด้วย `border-radius: 50%` + `object-fit: cover` | **[Project] Avatar & Pill Form Styling**<br>• Core: สร้างรูปโปรไฟล์วงกลมไม่บิดเบี้ยว และช่องกรอกทรงแคปซูล<br>• Extra: โปสเตอร์คำคมจัดกรอบพร้อมเงามิติ |
 | **9** | Midterm Checkpoint | สรุปความรู้ HTML/CSS และอธิบายโจทย์ Capstone Project | ลงมือทำ Capstone และโหวตผลงานเพื่อน | **🎯 [Capstone 1] Online Resume**<br>• Core: เรซูเม่ของตัวเองแบบจัดเต็มด้วย HTML/CSS |
-| **10** | Advanced Layouts | การจัดตำแหน่งตำแหน่งด้วย CSS Position (Relative, Absolute, Fixed) | ทำ Navbar ติดขอบบน และทำ Badge แจ้งเตือน | **[Project] Sticky Nav & Badges**<br>• Core: แถบเมนูติดหนึบและปุ่มแจ้งเตือนขวาบน<br>• Extra: ใส่ Hover effect เพิ่มมิติการเคลื่อนไหว |
-| **11** | Flexbox | คอนเซปต์การทำงาน of Flexbox (display: flex) และการจัดเรียง | จัดแกลเลอรีรูปภาพและเล่นเกมแข่งขัน | **[Project] Photo Gallery**<br>• Core: แกลเลอรีรูปภาพจัดเรียงด้วย Flexbox<br>• Extra: เล่นเกม Flexbox Froggy แข่งขันในห้อง |
-| **12** | Grid | คอนเซปต์การแบ่งเลย์เอาต์หน้าเว็บเป็นตาราง (CSS Grid) | จัดบทความแบบนิตยสาร (ซ้ายรูป-ขวาข้อความ) | **[Project] Magazine Layout**<br>• Core: หน้าเว็บบทความแบบนิตยสารมีหลายช่อง<br>• Extra: ฝึกทักษะผ่านเกม Grid Garden |
-| **13** | Bootstrap Grid & Components | แนะนำเฟรมเวิร์กสำเร็จรูป CDN ระบบกริด 12 ช่อง และชิ้นส่วน (Navbar, Cards, Carousel) | ประกอบโครงสร้างและ Override CSS สไตล์แบรนด์ตนเอง | **[Project] Product Landing Page**<br>• Core: พัฒนาเว็บแลนดิ้งเพจประกอบสไลด์ เมนู และการ์ดจัดกริด<br>• Extra: ปรับ Override สีและเงามิติปุ่มด้วยสไตล์เฉพาะแบรนด์ |
-| **14** | Final Project (Start) | ออกแบบโครงร่าง (Wireframe) เว็บไซต์พอร์ตโฟลิโอส่วนตัว | สมัคร GitHub และนำโปรเจกต์เดิมขึ้น GitHub Pages | **[Project] Portfolio Design & Hosting**<br>• Core: อัปโหลดชิ้นงาน Week 3 ขึ้น GitHub Pages จริง<br>• Extra: สลับกันตรวจสอบหาลิงก์พัง (Broken Links) |
-| **15** | Final Project (Dev) | การใช้ Custom CSS ร่วมกับ Bootstrap เพื่อแต่งหน้าเว็บให้มีเอกลักษณ์ | พัฒนาหน้าเว็บหลักและหน้าย่อย คัดเลือกรูปภาพ | **[Final Project] Portfolio Development**<br>• ลงมือสร้างหน้าประวัติการศึกษา ทักษะ และผลงาน |
-| **16** | Final Project (QA) | การเช็คความเรียบร้อย (Responsive) และหลักการใช้งาน (UX/UI) | จับคู่ทดสอบเว็บเพื่อน หาจุดบกพร่องและแก้ไขเพื่อส่งงาน | **[Final Project] QA & Final Deploy**<br>• ตรวจสอบบั๊ก ลิงก์เสีย และความสวยงามบนมือถือ |
+| **10** | Advanced Layouts | การจัดตำแหน่งด้วย CSS Position (Sticky Navbar) | ทำแถบเมนูนำทาง 4 หน้าติดขอบบน พร้อมสถานะ `.active` | **[Project] Sticky Navigation & Active State**<br>• Core: แถบเมนู 4 หน้าติดขอบบนและเน้นสีหน้าปัจจุบัน<br>• Extra: ใส่ Hover effect และ Badge แจ้งเตือนขวาบน |
+| **11** | Flexbox | คอนเซปต์ Flexbox (`display: flex`, `flex-wrap`, `gap`) | จัดแกลเลอรีรูปภาพและชุดไอคอนเครื่องมือ 12 ไอคอน | **[Project] Tech Program Icons Grid**<br>• Core: จัดเรียงกล่องไอคอนทักษะ 12 ตัวแบบยืดหยุ่นด้วย Flexbox<br>• Extra: เล่นเกม Flexbox Froggy แข่งขันในห้อง |
+| **12** | Grid | คอนเซปต์การแบ่งเลย์เอาต์หน้าเว็บเป็นตาราง (CSS Grid) | จัดการ์ดคอร์สเรียน 3 ใบใน 1 แถวอย่างเท่ากัน | **[Project] Course Cards Grid**<br>• Core: จัดการ์ดคอร์ส 3 ใบ (VR, 3D, Programming) พร้อมภาพและราคา<br>• Extra: ฝึกทักษะผ่านเกม Grid Garden |
+| **13** | Bootstrap 5: Foundations | แนะนำ Bootstrap 5 CDN, ระบบ Grid 12 คอลัมน์ และการประกอบ Landing Page | สร้างหน้าแรก `index.html` (Hero Banner + 3 Course Cards) | **[Project] Learning Platform - Home (`index.html`)**<br>• Core: หน้าแรกครบส่วน Hero Section และ 3 การ์ดคอร์สด้วย Bootstrap<br>• Extra: ปรับ Override สีและปุ่ม Call-to-action ตามธีมแบรนด์ |
+| **14** | Bootstrap 5: Components | ชิ้นส่วน Bootstrap ขั้นสูง (Accordion FAQ, Badges, Form Select) | สร้างหน้าคอร์ส `course.html` และสมัครบัญชี GitHub | **[Project] Course Detail & GitHub Setup**<br>• Core: สร้างหน้า `course.html` พร้อม Accordion FAQ และปุ่ม Add to cart<br>• Extra: สมัครและตั้งค่าบัญชี GitHub ล่วงหน้า |
+| **15** | Instructors & Shared Components | สร้างหน้าผู้สอน `instructors.html`, `contact.html` และแนะนำ Shared Web Components | ประกอบ 4 หน้า และทดสอบผ่าน `preview_components.html` | **[Project] Instructors, Contact & Components Intro**<br>• Core: พัฒนาหน้าผู้สอนและหน้าติดต่อ พร้อมทดลองแชร์ Navbar ผ่าน `components.js`<br>• Extra: ทดสอบเปลี่ยนสีธีมผ่าน Component Playground |
+| **16** | Multi-Page QA & Deployment | ด่านตรวจสอบคุณภาพ (QA Checklist), ทดสอบจอมือถือ (Inspect) และระบบโฮสติ้ง | ปฏิบัติการแก้ Broken Links (โจทย์ TODO) และนำขึ้น GitHub Pages | **[Final Project] QA Testing & Live Deployment**<br>• Core: เชื่อมโยง 4 หน้าเว็บผ่าน `components.js`, ตรวจจอมือถือ, ขึ้น GitHub Pages ได้ URL จริง<br>• Extra: ทดสอบสแกนเปิดผ่านสมาร์ตโฟนจริงรอบห้อง (QA Pair Swap) |
 | **17** | Final Showcase | เตรียมตัวนำเสนอ สรุปจุดเด่นของผลงานและปัญหาที่พบ | พรีเซนต์เว็บไซต์บนอินเทอร์เน็ตผ่านลิงก์ GitHub Pages | **🏆 [Showcase] พรีเซนต์พอร์ตโฟลิโอ**<br>• นำเสนอเว็บไซต์จริงต่อหน้าเพื่อนๆ และครู |
+
+---
+
+## 🧭 แผนผังการพัฒนาทักษะแบบสะสม (Backward Design & Curriculum Scaffolding to Week 16)
+
+เพื่อให้เป้าหมายปลายทางใน **สัปดาห์ที่ 16 (เว็บไซต์ 4 หน้า Bootstrap 5 + Shared Header/Footer + QA มือถือ + GitHub Pages)** ประสบความสำเร็จอย่างราบรื่นโดยไม่เกิดภาวะภาระการรู้คิดล้นเกิน (Cognitive Overload) หลักสูตรจึงจัดวาง **"นั่งร้านการเรียนรู้ (Learning Scaffolding)"** ปูพื้นฐานชิ้นส่วนคอมโพเนนต์ย้อนกลับตั้งแต่สัปดาห์แรกๆ ดังนี้:
+
+```mermaid
+graph TD
+    subgraph Phase1["ระยะที่ 1: ฐานรากโครงสร้าง (HTML Foundations)"]
+        W2["Week 2 (Forms)<br>สร้างฟอร์ม Contact & Dropdown"]
+        W3["Week 3 (Multi-Page)<br>วางพิมพ์เขียว 4 หน้าเว็บ & images/"]
+    end
+
+    subgraph Phase2["ระยะที่ 2: ปูทางสไตล์ & ชิ้นส่วน (CSS Styling)"]
+        W6["Week 6 (CSS Selectors)<br>ปูเรื่อง CSS Variables (--brand-blue)"]
+        W8["Week 8 (Box Model)<br>สูตรภาพโปรไฟล์วงกลม & Input แคปซูล"]
+        W10["Week 10 (Layouts)<br>ทำ Sticky Navbar 4 หน้า + .active"]
+        W11["Week 11 (Flexbox)<br>จัดกริด 12 ไอคอนความชำนาญ"]
+        W12["Week 12 (Grid)<br>จัดกริด 3 การ์ดคอร์สเรียน"]
+    end
+
+    subgraph Phase3["ระยะที่ 3: รวมพลัง Bootstrap & Shared Components"]
+        W13["Week 13 (Bootstrap 5)<br>สร้างหน้าแรก index.html (Hero + 3 Cards)"]
+        W14["Week 14 (Components)<br>สร้าง course.html (Accordion) & เตรียม GitHub"]
+        W15["Week 15 (Site Assembly)<br>สร้าง instructors.html, contact.html<br>& เปิดตัว components.js"]
+    end
+
+    subgraph Phase4["ระยะที่ 4: ความสำเร็จปลายทาง (Culmination)"]
+        W16["🎯 Week 16 (QA & Deployment)<br>ภารกิจเชื่อมโยงลิงก์ TODO, ตรวจจอมือถือ, ขึ้น GitHub Pages"]
+    end
+
+    W2 --> W8
+    W3 --> W10
+    W6 --> W13
+    W8 --> W15
+    W10 --> W13
+    W11 --> W15
+    W12 --> W13
+    W13 --> W14
+    W14 --> W15
+    W15 --> W16
+```
+
+### 📋 ตารางการสะสมชิ้นส่วน (Component Accumulation Table)
+*   **Hero Section & Course Cards:** ปูพื้นฐานการจัดวางจาก Week 10 & 12 ➡️ เข้าสู่ Bootstrap Grid ใน **Week 13 (`index.html`)**
+*   **Web Design Showcase & Accordion FAQ:** ปูพื้นฐานฟอร์มจาก Week 2 ➡️ เข้าสู่ Bootstrap Components ใน **Week 14 (`course.html`)**
+*   **Circular Avatar & 12 Program Icons:** ปูพื้นฐานจาก Week 8 & 11 ➡️ เข้าสู่ Bootstrap Layout ใน **Week 15 (`instructors.html`)**
+*   **Pill Contact Form & 3 Circular Info Cards:** ปูพื้นฐานจาก Week 2 & 8 ➡️ เข้าสู่ Bootstrap Layout ใน **Week 15 (`contact.html`)**
+*   **Shared Header/Footer (`components.js`):** ปูแนวคิด DRY จาก Week 5 & CSS Variables จาก Week 6 ➡️ เปิดตัวใน **Week 15** และทดสอบเชื่อมโยงจริงใน **Week 16**
 
 ---
 
