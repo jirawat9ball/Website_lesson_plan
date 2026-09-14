@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Components Playground & Preview (พรีวิว Header & Footer)</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* สไตล์พิเศษสำหรับหน้า Playground */
+        .playground-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .playground-toolbar {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 1.5rem;
+        }
+
+        .preview-stage {
+            background: #f1f5f9;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .preview-frame {
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #cbd5e1;
+        }
+
+        /* ปุ่มเลือกสี Palette */
+        .color-dot {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.15);
+        }
+
+        .color-dot.active {
+            border-color: #0f172a;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.15);
+        }
+
+        /* โค้ดกล่องดำ */
+        .code-box {
+            background: #0f172a;
+            color: #f8fafc;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .btn-copy {
+            transition: all 0.2s ease;
+        }
+
+        .btn-copy.copied {
+            background-color: #10b981 !important;
+            border-color: #10b981 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- แถบนำทางด้านบนของหน้า Playground -->
+    <header class="bg-dark text-white py-3 sticky-top shadow">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-3">
+                <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill"><i class="bi bi-code-slash me-1"></i> Playground</span>
+                <div>
+                    <h1 class="h4 mb-0 fw-bold">SiteHeader & SiteFooter Live Studio</h1>
+                    <small class="text-white-50">ห้องทดลองและสื่อการสอน Shared Components ประจำสัปดาห์ที่ 16</small>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="index.html" class="btn btn-outline-light btn-sm px-3 rounded-pill">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> เปิดดูเว็บจริง (index.html)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        <!-- ==============================================================
+             ส่วนที่ 2.1: เครื่องมือทดลองเปลี่ยนธีมสีทั้งระบบ (CSS Variables Switcher)
+             ============================================================== -->
+        <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white p-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-primary-subtle text-primary fw-bold">จุดเรียนรู้ที่ 1</span>
+                        <h3 class="h5 fw-bold mb-0 text-dark">ทดลองเปลี่ยนสีธีมทั้งระบบ (CSS Theme Switcher)</h3>
+                    </div>
+                    <p class="text-secondary small mb-0">
+                        คลิกเลือกสีด้านขวาเพื่อทดสอบพลังของ <code>--brand-blue</code> ในไฟล์ <code>style.css</code> 
+                        นักเรียนจะเห็นว่าเมื่อเปลี่ยนค่าตัวแปร CSS เพียงจุดเดียว ทั้ง Navbar และ Footer จะเปลี่ยนเฉดสีตามทันที!
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex flex-wrap align-items-center justify-content-lg-end gap-3">
+                        <span class="small fw-bold text-secondary">เลือกชุดสี:</span>
+                        <!-- ชุดสี 5 โทนยอดนิยม -->
+                        <button type="button" class="color-dot active" style="background: #0066ff;" onclick="switchThemeColor('#0066ff', 'Royal Blue (สีน้ำเงินมาตรฐาน)', this)" title="Royal Blue (#0066ff)"></button>
+                        <button type="button" class="color-dot" style="background: #10b981;" onclick="switchThemeColor('#10b981', 'Emerald Green (สีเขียวมรกต)', this)" title="Emerald Green (#10b981)"></button>
+                        <button type="button" class="color-dot" style="background: #7c3aed;" onclick="switchThemeColor('#7c3aed', 'Modern Purple (สีม่วงเทคโนโลยี)', this)" title="Modern Purple (#7c3aed)"></button>
+                        <button type="button" class="color-dot" style="background: #e11d48;" onclick="switchThemeColor('#e11d48', 'Crimson Rose (สีแดงสดใส)', this)" title="Crimson Rose (#e11d48)"></button>
+                        <button type="button" class="color-dot" style="background: #0f172a;" onclick="switchThemeColor('#0f172a', 'Midnight Dark (สีเข้มมิดไนท์)', this)" title="Midnight Dark (#0f172a)"></button>
+                        
+                        <span id="current-theme-badge" class="badge bg-light text-dark border px-3 py-2 rounded-pill small">
+                            ธีมปัจจุบัน: #0066ff
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============================================================
+             ส่วนที่ 2.2: พื้นที่พรีวิวแถบเมนูนำทาง (<site-header>)
+             ============================================================== -->
+        <div class="playground-card">
+            <!-- Toolbar ด้านบน -->
+            <div class="playground-toolbar d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-compass text-primary fs-5"></i>
+                    <h2 class="h5 fw-bold mb-0">พรีวิวแถบเมนูนำทาง (&lt;site-header&gt;)</h2>
+                </div>
+
+                <!-- ปุ่มควบคุมการจำลองหน้า (Active State) และขนาดหน้าจอ -->
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <!-- จำลองหน้า Active -->
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-primary" onclick="changeActivePage('index.html', this)">Index</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="changeActivePage('course.html', this)">Course</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="changeActivePage('instructors.html', this)">Instructors</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="changeActivePage('contact.html', this)">Contact Us</button>
+                    </div>
+
+                    <!-- จำลองขนาดหน้าจอ (Responsive Viewport) -->
+                    <div class="btn-group btn-group-sm" role="group" title="ทดสอบมุมมองหน้าจอ">
+                        <button type="button" class="btn btn-dark active" onclick="setDeviceViewport('100%', this, 'header-frame')">
+                            <i class="bi bi-laptop me-1"></i> จอคอม
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" onclick="setDeviceViewport('768px', this, 'header-frame')">
+                            <i class="bi bi-tablet me-1"></i> แท็บเล็ต
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" onclick="setDeviceViewport('390px', this, 'header-frame')">
+                            <i class="bi bi-phone me-1"></i> มือถือ
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- พื้นที่แสดงผลจำลอง (Stage) -->
+            <div class="preview-stage">
+                <div id="header-frame" class="preview-frame">
+                    <site-header id="demo-header" active="index.html"></site-header>
+                </div>
+            </div>
+
+            <!-- กล่องโค้ดพร้อมปุ่ม Copy Code -->
+            <div class="p-4 bg-white border-top">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <label class="small fw-bold text-secondary">
+                        <i class="bi bi-clipboard2-code me-1"></i> โค้ดสำหรับนำไปวางในไฟล์ HTML (ใต้แท็ก &lt;body&gt;):
+                    </label>
+                    <button class="btn btn-sm btn-outline-primary btn-copy rounded-pill px-3" onclick="copyCodeText('header-code-snippet', this)">
+                        <i class="bi bi-copy me-1"></i> คัดลอกโค้ด
+                    </button>
+                </div>
+                <div class="code-box" id="header-code-snippet">&lt;site-header active="index.html"&gt;&lt;/site-header&gt;</div>
+            </div>
+        </div>
+
+        <!-- ==============================================================
+             ส่วนที่ 2.3: พื้นที่พรีวิวส่วนท้ายเว็บไซต์ (<site-footer>)
+             ============================================================== -->
+        <div class="playground-card">
+            <!-- Toolbar ด้านบน -->
+            <div class="playground-toolbar d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-layout-sidebar-inset-reverse text-primary fs-5"></i>
+                    <h2 class="h5 fw-bold mb-0">พรีวิวส่วนท้ายเว็บไซต์ (&lt;site-footer&gt;)</h2>
+                </div>
+
+                <!-- ปุ่มจำลองขนาดหน้าจอ (Responsive Viewport) สำหรับ Footer -->
+                <div class="btn-group btn-group-sm" role="group" title="ทดสอบมุมมองหน้าจอ Footer">
+                    <button type="button" class="btn btn-dark active" onclick="setDeviceViewport('100%', this, 'footer-frame')">
+                        <i class="bi bi-laptop me-1"></i> จอคอม (100%)
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" onclick="setDeviceViewport('768px', this, 'footer-frame')">
+                        <i class="bi bi-tablet me-1"></i> แท็บเล็ต (768px)
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" onclick="setDeviceViewport('390px', this, 'footer-frame')">
+                        <i class="bi bi-phone me-1"></i> มือถือ (390px)
+                    </button>
+                </div>
+            </div>
+
+            <!-- พื้นที่แสดงผลจำลอง (Stage) -->
+            <div class="preview-stage">
+                <div id="footer-frame" class="preview-frame">
+                    <site-footer></site-footer>
+                </div>
+            </div>
+
+            <!-- กล่องโค้ดพร้อมปุ่ม Copy Code -->
+            <div class="p-4 bg-white border-top">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <label class="small fw-bold text-secondary">
+                        <i class="bi bi-clipboard2-code me-1"></i> โค้ดสำหรับนำไปวางในไฟล์ HTML (ก่อนปิดแท็ก &lt;/body&gt;):
+                    </label>
+                    <button class="btn btn-sm btn-outline-primary btn-copy rounded-pill px-3" onclick="copyCodeText('footer-code-snippet', this)">
+                        <i class="bi bi-copy me-1"></i> คัดลอกโค้ด
+                    </button>
+                </div>
+                <div class="code-box" id="footer-code-snippet">&lt;site-footer&gt;&lt;/site-footer&gt;
+&lt;script src="components.js"&gt;&lt;/script&gt;</div>
+            </div>
+        </div>
+
+        <!-- ==============================================================
+             ส่วนที่ 2.4: แถบสรุปข้อคิดและหลักการสอน (Pedagogical Cheat Sheet)
+             ============================================================== -->
+        <section class="card border-0 rounded-4 shadow-sm p-4 p-lg-5 bg-white">
+            <h3 class="fw-bold mb-4 text-dark"><i class="bi bi-lightbulb-fill text-warning me-2"></i>สรุปสิ่งที่นักเรียนได้เรียนรู้จากส่วนนี้ (Key Takeaways)</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 bg-light h-100 border">
+                        <h5 class="fw-bold text-primary mb-2"><i class="bi bi-1-circle me-2"></i>Single Source of Truth</h5>
+                        <p class="small text-secondary mb-0">
+                            การเขียนเว็บที่ดีจะไม่คัดลอกโค้ดเดิมซ้ำๆ (DRY: Don't Repeat Yourself) 
+                            การเก็บ Navbar ไว้ที่ <code>components.js</code> ช่วยให้แก้ไขจุดเดียวแล้วอัปเดตทั้งเว็บทันที
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 bg-light h-100 border">
+                        <h5 class="fw-bold text-success mb-2"><i class="bi bi-2-circle me-2"></i>CSS Variables</h5>
+                        <p class="small text-secondary mb-0">
+                            การใช้ตัวแปร <code>var(--brand-blue)</code> ทำให้นักเรียนสามารถ Re-brand หรือสร้าง Dark Mode 
+                            ได้ง่ายดายโดยการเปลี่ยนค่าตัวแปรใน CSS โดยไม่ต้องไล่แก้โค้ดทุกบรรทัด
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 bg-light h-100 border">
+                        <h5 class="fw-bold text-info mb-2"><i class="bi bi-3-circle me-2"></i>Responsive Design</h5>
+                        <p class="small text-secondary mb-0">
+                            การทดสอบย่อ-ขยายหน้าจอมือถือ (Viewport Toggle) ช่วยให้นักเรียนเข้าใจว่า 
+                            Navbar ของ Bootstrap จะยุบกลายเป็นปุ่ม Hamburger อัตโนมัติเมื่อหน้าจอแคบกว่า <code>992px</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bootstrap 5 JS Bundle & Shared Components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="components.js"></script>
+
+    <!-- JavaScript ลูกเล่นและการควบคุมในหน้า Playground -->
+    <script>
+        // 1. ฟังก์ชันเปลี่ยนสีธีม Real-time ผ่าน CSS Variables
+        function switchThemeColor(colorHex, colorName, dotElement) {
+            // อัปเดต CSS Variable ที่ :root
+            document.documentElement.style.setProperty('--brand-blue', colorHex);
+            document.documentElement.style.setProperty('--bs-primary', colorHex);
+
+            // อัปเดตปุ่มสีที่เลือก
+            document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
+            dotElement.classList.add('active');
+
+            // อัปเดตข้อความ Badge
+            const badge = document.getElementById('current-theme-badge');
+            badge.textContent = `ธีมปัจจุบัน: ${colorName}`;
+            badge.style.color = colorHex;
+            badge.style.borderColor = colorHex;
+        }
+
+        // 2. ฟังก์ชันจำลองหน้า Active ให้กับ Navbar
+        function changeActivePage(pageName, btnElement) {
+            const group = btnElement.parentElement.querySelectorAll('button');
+            group.forEach(btn => {
+                btn.className = 'btn btn-outline-secondary';
+            });
+            btnElement.className = 'btn btn-primary';
+
+            // เรนเดอร์ Header ใหม่ในเฟรม
+            const frame = document.getElementById('header-frame');
+            frame.innerHTML = `<site-header active="${pageName}"></site-header>`;
+
+            // อัปเดตข้อความตัวอย่างโค้ด
+            document.getElementById('header-code-snippet').textContent = `<site-header active="${pageName}"><\/site-header>`;
+        }
+
+        // 3. ฟังก์ชันจำลองขนาดหน้าจอ (Desktop, Tablet, Mobile)
+        function setDeviceViewport(width, btnElement, frameId) {
+            const group = btnElement.parentElement.querySelectorAll('button');
+            group.forEach(btn => {
+                btn.className = 'btn btn-outline-dark';
+            });
+            btnElement.className = 'btn btn-dark active';
+
+            const frame = document.getElementById(frameId);
+            frame.style.maxWidth = width;
+        }
+
+        // 4. ฟังก์ชันคัดลอกโค้ดพร้อมระบบสำรอง (Fallback) สำหรับเปิดผ่าน file:///
+        function copyCodeText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            const showSuccess = () => {
+                const originalHtml = btnElement.innerHTML;
+                btnElement.classList.add('copied');
+                btnElement.innerHTML = '<i class="bi bi-check2 me-1"></i> คัดลอกแล้ว!';
+                setTimeout(() => {
+                    btnElement.classList.remove('copied');
+                    btnElement.innerHTML = originalHtml;
+                }, 2000);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(showSuccess).catch(() => fallbackCopy(textToCopy, showSuccess));
+            } else {
+                fallbackCopy(textToCopy, showSuccess);
+            }
+        }
+
+        function fallbackCopy(text, callback) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                if (callback) callback();
+            } catch (err) {
+                console.error('คัดลอกไม่สำเร็จ:', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
