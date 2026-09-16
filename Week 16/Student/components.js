@@ -9,19 +9,7 @@
 
 class SiteHeader extends HTMLElement {
   connectedCallback() {
-    // 1. ตรวจหาชื่อหน้าปัจจุบันอัตโนมัติจาก URL (เช่น index.html, course.html)
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const activePage = this.getAttribute('active') || currentPath;
-
-    // Helper เช็คคลาส active
-    const isActive = (pageName) => {
-      if (activePage === pageName || (pageName === 'index.html' && (activePage === '' || activePage === 'index.html'))) {
-        return 'active';
-      }
-      return '';
-    };
-
-    // 2. แม่แบบ Navbar (Bootstrap 5)
+    // แม่แบบ Navbar (Bootstrap 5)
     this.innerHTML = `
       <nav class="navbar navbar-expand-lg sticky-top border-bottom shadow-sm">
         <div class="container">
@@ -35,17 +23,17 @@ class SiteHeader extends HTMLElement {
 
           <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 fw-medium gap-lg-3">
-              <!-- TODO 1: เติมลิงก์เชื่อมต่อหน้า Index (ใส่ href="index.html") -->
+              <!-- สเต็ปที่ 3.1: เติมลิงก์เชื่อมต่อหน้า Index (ใส่ href="index.html") -->
               <li class="nav-item">
-                <a class="nav-link ${isActive('index.html')}" href="#">Index</a>
+                <a class="nav-link" href="#">Index</a>
               </li>
-              <!-- TODO 2: เติมลิงก์เชื่อมต่อหน้ารายละเอียดคอร์ส (ใส่ href="course.html") -->
+              <!-- สเต็ปที่ 3.2: เติมลิงก์เชื่อมต่อหน้ารายละเอียดคอร์ส (ใส่ href="course.html") -->
               <li class="nav-item">
-                <a class="nav-link ${isActive('course.html')}" href="#">Course</a>
+                <a class="nav-link" href="#">Course</a>
               </li>
-              <!-- TODO 3: เติมลิงก์เชื่อมต่อหน้าข้อมูลผู้สอน (ใส่ href="instructors.html") -->
+              <!-- สเต็ปที่ 3.3: เติมลิงก์เชื่อมต่อหน้าข้อมูลผู้สอน (ใส่ href="instructors.html") -->
               <li class="nav-item">
-                <a class="nav-link ${isActive('instructors.html')}" href="#">Instructors</a>
+                <a class="nav-link" href="#">Instructors</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -60,9 +48,9 @@ class SiteHeader extends HTMLElement {
               <li class="nav-item">
                 <a class="nav-link" href="#news">News & Events</a>
               </li>
-              <!-- TODO 4: เติมลิงก์เชื่อมต่อหน้าติดต่อเรา (ใส่ href="contact.html") -->
+              <!-- สเต็ปที่ 3.4: เติมลิงก์เชื่อมต่อหน้าติดต่อเรา (ใส่ href="contact.html") -->
               <li class="nav-item">
-                <a class="nav-link ${isActive('contact.html')}" href="#">Contact Us</a>
+                <a class="nav-link" href="#">Contact Us</a>
               </li>
             </ul>
 

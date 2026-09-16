@@ -4,12 +4,7 @@
    ========================================================================== */
 
 :root {
-  --bs-primary: #0066ff;
-  --bs-primary-rgb: 0, 102, 255;
-  --brand-blue: #0066ff;
-  --brand-dark: #1e293b;
-  --brand-muted: #64748b;
-  --brand-light: #f8fafc;
+  /* สเต็ปที่ 4: กำหนดตัวแปรธีมสีประจำเว็บไซต์ (CSS Variables) เช่น --bs-primary, --brand-blue */
 }
 
 body {
@@ -40,11 +35,7 @@ main {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--brand-blue) !important;
-  font-weight: 600;
-}
+/* สเต็ปที่ 5: กำหนดสไตล์เมื่อ hover และสถานะหน้าปัจจุบัน (active) ของเมนู Navbar */
 
 .logo-badge {
   width: 44px;
