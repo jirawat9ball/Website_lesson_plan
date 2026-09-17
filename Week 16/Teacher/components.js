@@ -150,6 +150,11 @@ class SiteFooter extends HTMLElement {
   }
 }
 
-// ลงทะเบียน Custom Web Components
+// ============================================================================
+// การลงทะเบียน Custom Web Components (Custom Elements Registration)
+// สั่งให้เบราว์เซอร์จดทะเบียนแท็กใหม่คู่กับ Class แม่แบบ
+// Syntax: customElements.define('ชื่อแท็ก-มีขีดกลาง', ชื่อClass);
+// ============================================================================
 customElements.define('site-header', SiteHeader);
 customElements.define('site-footer', SiteFooter);
+

@@ -38,10 +38,20 @@ gantt
 * **ปัญหาที่ต้องเปิดประเด็น:** 
   > *"ถ้านักเรียนทำเว็บ 4 หน้า (Index, Course, Instructors, Contact) แล้ววันหนึ่งผู้อำนวยการสั่งเปลี่ยนเบอร์โทรศัพท์ใน Footer หรือเพิ่มเมนูใหม่ นักเรียนต้องเปิดแก้กี่ไฟล์?"*
   * นักเรียนจะตอบว่า: 4 ไฟล์ (และถ้าเว็บมี 100 หน้า ก็ต้องแก้ 100 ครั้ง เสี่ยงต่อการลืมหรือแก้ไม่ครบ)
-* **วิธีแก้ด้วย Vanilla JavaScript:**
+* **วิธีแก้ด้วย Vanilla JavaScript (Web Components):**
   * เราสร้างแม่แบบ Navbar และ Footer ไว้ที่ `components.js` แค่ที่เดียว
   * เวลาใช้งาน เราแค่เรียกใช้แท็กที่เราสร้างขึ้นเอง (Custom Elements) คือ `<site-header></site-header>` และ `<site-footer></site-footer>`
   * **มุกเปรียบเทียบ:** เหมือน **"พิมพ์เขียวเสาไฟส่องสว่างของหมู่บ้าน"** ที่สร้างต้นแบบไว้จุดเดียว ทุกบ้านแค่สั่งติดตั้ง ถ้าจะเปลี่ยนหลอดไฟ เราแก้ที่ต้นแบบ ทุกบ้านสว่างเหมือนกันหมดทันที
+  * **หัวใจสำคัญ - การจดทะเบียนแท็กด้วย `customElements.define()`:**
+    ```javascript
+    customElements.define('site-header', SiteHeader);
+    customElements.define('site-footer', SiteFooter);
+    ```
+    * **เปรียบเหมือน "การนำสูติบัตรไปแจ้งเกิดที่อำเภอ":**
+      1. เราเขียนคลาส `class SiteHeader extends HTMLElement` คือ **การเขียนพิมพ์เขียว**
+      2. เบราว์เซอร์จะไม่รู้จักแท็ก `<site-header>` เลย จนกว่าเราจะใช้คำสั่ง `customElements.define('site-header', SiteHeader)` สั่งให้เบราว์เซอร์ "จดทะเบียน" แท็กนี้เข้าระบบ
+      3. **กฎเหล็กของ Web Components:** ชื่อแท็ก Custom Element **ต้องมีเครื่องหมายขีดกลาง (Hyphen `-`) เสมอ** เช่น `site-header` เพื่อไม่ให้ชนกับแท็กมาตรฐานของ HTML (เช่น `header`, `footer`)
+
 
 ---
 
@@ -108,7 +118,8 @@ gantt
 <site-footer></site-footer>
 ```
 
-> 🎯 **จุดสังเกต:** เมื่อนักเรียนพิมพ์เสร็จและกดบันทึก ให้ลองเปิดดูบนเบราว์เซอร์ จะเห็น Navbar สีขาวด้านบน และ Footer สีน้ำเงินด้านล่างปรากฏขึ้นมาครบทุกหน้าทันที!
+> 🎯 **จุดกระตุกต่อมคิด (Teachable Moment):** เมื่อนักเรียนพิมพ์เสร็จและกดบันทึก ให้ลองเปิดดูบนเบราว์เซอร์ จะสังเกตเห็นว่า **"เอ๊ะ! ทำไมหน้าจอยังว่างเปล่า Navbar กับ Footer ยังไม่ขึ้นมา?"** 
+> * ครูเฉลยและเปิดประเด็น: *"เพราะแท็ก `<site-header>` ไม่ใช่แท็กมาตรฐานอย่าง `<div>` หรือ `<p>` เบราว์เซอร์จึงยังไม่รู้จัก! เราจะต้องไปสั่ง 'จดทะเบียนแจ้งเกิด' ให้เบราว์เซอร์รู้จักในไฟล์ `components.js` ในสเต็ปที่ 3 เสียก่อน!"*
 
 ---
 
@@ -128,27 +139,44 @@ gantt
 
 ---
 
-### 🛠️ สเต็ปที่ 3: เติมลิงก์เชื่อมต่อใน `components.js` (15 นาที)
-ให้นักเรียนเปิดไฟล์ `components.js` เพื่อเชื่อมเมนู Navbar ด้านบน:
+### 🛠️ สเต็ปที่ 3: เติมลิงก์เชื่อมต่อและจดทะเบียน Custom Elements ใน `components.js` (15 นาที)
+ให้นักเรียนเปิดไฟล์ `components.js`:
 
+#### 3.1 เติมลิงก์เชื่อมต่อเมนู Navbar (บรรทัดที่ 26 - 54):
 ```javascript
-// ค้นหา TODO 1 - 4 ในบรรทัดที่ 26 - 50:
+// ค้นหา TODO สเต็ปที่ 3.1 - 3.4:
 <li class="nav-item">
-  <a class="nav-link" href="index.html">Index</a>          <!-- TODO 1 -->
+  <a class="nav-link" href="index.html">Index</a>          <!-- สเต็ปที่ 3.1 -->
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="course.html">Course</a>        <!-- TODO 2 -->
+  <a class="nav-link" href="course.html">Course</a>        <!-- สเต็ปที่ 3.2 -->
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="instructors.html">Instructors</a> <!-- TODO 3 -->
+  <a class="nav-link" href="instructors.html">Instructors</a> <!-- สเต็ปที่ 3.3 -->
 </li>
 ...
 <li class="nav-item">
-  <a class="nav-link" href="contact.html">Contact Us</a>   <!-- TODO 4 -->
+  <a class="nav-link" href="contact.html">Contact Us</a>   <!-- สเต็ปที่ 3.4 -->
 </li>
 ```
 
-> 💡 **ครูเน้นย้ำ:** *"ดูสิ! เราแก้ที่ `components.js` แค่ไฟล์เดียว แต่ตอนนี้ไม่ว่าจะอยู่หน้าไหน เราสามารถคลิกเมนูด้านบนสลับไปมาทั้ง 4 หน้าได้ทั้งหมดทันที!"*
+#### 3.2 ลงทะเบียน Custom Elements ที่ท้ายไฟล์ (บรรทัดล่างสุด):
+ให้นักเรียนเลื่อนไปล่างสุดของไฟล์ `components.js` แล้วพิมพ์คำสั่งจดทะเบียนแท็ก:
+
+```javascript
+// ลงทะเบียน Custom Web Components
+customElements.define('site-header', SiteHeader);
+customElements.define('site-footer', SiteFooter);
+```
+
+> 💡 **ครูเน้นย้ำและอธิบายโค้ด:**
+> 1. **`customElements.define(ชื่อแท็ก, ชื่อคลาส)`**:
+>    - พารามิเตอร์ที่ 1 (`'site-header'` / `'site-footer'`): ชื่อแท็ก HTML ที่เราสร้างขึ้น (ต้องอยู่ในเครื่องหมายคำพูด และมีขีดกลาง `-`)
+>    - พารามิเตอร์ที่ 2 (`SiteHeader` / `SiteFooter`): ชื่อคลาสที่เป็นพิมพ์เขียว (ระวังตัวพิมพ์ใหญ่-เล็ก ต้องตรงกับชื่อ `class` ข้างบน)
+> 2. **ทันทีที่บันทึกไฟล์และรีเฟรชเบราว์เซอร์:**
+>    - *“Aha Moment!”* Navbar สีขาวและ Footer สีน้ำเงินจะปรากฏขึ้นมาบนหน้าเว็บทันทีครบทั้ง 4 หน้า!
+>    - และเมื่อคลิกเมนู จะสลับไปมาทั้ง 4 หน้าได้ทันทีจากการแก้ที่ `components.js` เพียงจุดเดียว!
+
 
 ---
 
@@ -225,7 +253,8 @@ gantt
 
 | ปัญหาที่พบ | สาเหตุ | วิธีแก้ไข |
 | :--- | :--- | :--- |
-| **1. เปิดหน้าเว็บแล้วไม่เห็น Navbar หรือ Footer** | ลืมใส่แท็ก หรือลืมแท็ก `<script src="components.js"></script>` | ตรวจสอบว่ามีแท็ก `<site-header></site-header>` และที่ท้ายไฟล์มีลิงก์ไปยัง `components.js` ถูกต้อง |
+| **1. เปิดหน้าเว็บแล้วไม่เห็น Navbar หรือ Footer** | 1. ลืมพิมพ์ `customElements.define(...)` ท้ายไฟล์ `components.js`<br>2. สะกดชื่อคลาสผิด (เช่น `siteheader` แทน `SiteHeader`)<br>3. ลืมใส่แท็ก `<site-header>` หรือลืม `<script src="components.js">` | ตรวจสอบท้ายไฟล์ `components.js` ว่ามี 2 บรรทัด:<br>`customElements.define('site-header', SiteHeader);`<br>`customElements.define('site-footer', SiteFooter);`<br>และตัวสะกดตรงกับชื่อ class ข้างบน |
 | **2. คลิกเมนูแล้วขึ้นหน้า 404 Not Found** | สะกดชื่อไฟล์ใน `href` ไม่ตรง (เช่น `Course.html` พิมพ์ C ใหญ่) | ตรวจสอบชื่อไฟล์ใน `components.js` ต้องเป็นตัวพิมพ์เล็กทั้งหมดให้ตรงกับชื่อไฟล์จริง |
 | **3. รูปภาพแตกเมื่อขึ้น GitHub Pages** | พิมพ์ Path รูปผิด หรือตัวพิมพ์เล็ก-ใหญ่ไม่ตรง | GitHub เป็นระบบ Linux ที่แยก Case-sensitive ให้ตรวจชื่อโฟลเดอร์ เช่น `image/` หรือ `icon/` ให้ตรงกัน 100% |
 | **4. เข้า GitHub Pages แล้วขึ้น 404** | ไฟล์หน้าแรกไม่ได้ชื่อ `index.html` หรืออัปโหลดซ้อนโฟลเดอร์ | ตรวจสอบว่าไฟล์หน้าแรกต้องชื่อ `index.html` ตัวพิมพ์เล็ก และอยู่ชั้นนอกสุด (Root) ของ Repository |
+

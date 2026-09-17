@@ -33,7 +33,14 @@
 * `สเต็ปที่ 3.2:` แก้เมนู Course ➡️ `href="course.html"`
 * `สเต็ปที่ 3.3:` แก้เมนู Instructors ➡️ `href="instructors.html"`
 * `สเต็ปที่ 3.4:` แก้เมนู Contact Us ➡️ `href="contact.html"`
-> 💡 **ข้อสังเกต:** เมื่อแก้ที่ `components.js` เพียงที่เดียว เมนูนำทางใน **ทุกหน้าจะเชื่อมถึงกันทั้งหมดทันที!**
+* `สเต็ปที่ 3.5:` เลื่อนลงไปท้ายไฟล์ `components.js` เพื่อลงทะเบียน Custom Elements ให้เบราว์เซอร์รู้จักแท็กใหม่:
+  ```javascript
+  // ลงทะเบียน Custom Web Components
+  customElements.define('site-header', SiteHeader);
+  customElements.define('site-footer', SiteFooter);
+  ```
+> 💡 **ข้อสังเกต:** หากไม่เขียนคำสั่ง `customElements.define(...)` เบราว์เซอร์จะไม่รู้จักแท็ก `<site-header>` และ `<site-footer>` ทำให้หน้าเว็บไม่แสดงผล! และเมื่อเขียนเสร็จแล้ว การแก้เมนูที่ `components.js` เพียงที่เดียวจะอัปเดตทุกหน้าพร้อมกันทันที!
+
 
 #### 🔹 สเต็ปที่ 4: กำหนดถังสีกลางใน `style.css`
 เปิดไฟล์ `style.css` แล้วเติมตัวแปรสีในบล็อก `:root`:

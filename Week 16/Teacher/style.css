@@ -3,13 +3,31 @@
    สัปดาห์ที่ 16: เว็บไซต์แพลตฟอร์มการเรียนรู้ 4 หน้า
    ========================================================================== */
 
+
 :root {
-  --bs-primary: #0066ff;
-  --bs-primary-rgb: 0, 102, 255;
-  --brand-blue: #0066ff;
+  /* สเต็ปที่ 4: กำหนดตัวแปรธีมสีประจำเว็บไซต์ (CSS Variables) เช่น --bs-primary, --brand-blue */
+  --brand-primary: #fd0df5;
+  --brand-secondary: #1e00ff;
+  --brand-blue: var(--brand-primary);
   --brand-dark: #1e293b;
-  --brand-muted: #64748b;
-  --brand-light: #f8fafc;
+  --brand-light: #f1f5f9;
+  --brand-muted: #94a3b8;
+
+  --bs-primary: var(--brand-primary);
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-text-primary: var(--brand-primary);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--brand-primary);
+  --bs-btn-border-color: var(--brand-primary);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-bg: var(--brand-secondary);
+  --bs-btn-hover-border-color: var(--brand-secondary);
+  --bs-btn-active-bg: #var(--brand-secondary);
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-disabled-bg: var(--brand-primary);
+  --bs-btn-disabled-border-color: var(--brand-primary);
 }
 
 body {

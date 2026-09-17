@@ -142,6 +142,11 @@ class SiteFooter extends HTMLElement {
   }
 }
 
-// ลงทะเบียน Custom Web Components
-customElements.define('site-header', SiteHeader);
-customElements.define('site-footer', SiteFooter);
+// ============================================================================
+// สเต็ปที่ 3.5: ลงทะเบียน Custom Web Components (Custom Elements Registration)
+// ให้นักเรียนลงทะเบียนแท็กใหม่ เพื่อให้เบราว์เซอร์รู้จักและนำคลาสมาแสดงผล
+// ============================================================================
+// TODO: 1. ลงทะเบียนแท็ก 'site-header' ให้เชื่อมกับคลาส SiteHeader
+// TODO: 2. ลงทะเบียนแท็ก 'site-footer' ให้เชื่อมกับคลาส SiteFooter
+
+

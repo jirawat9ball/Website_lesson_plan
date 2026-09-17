@@ -46,7 +46,14 @@
   <site-footer></site-footer>
   <script src="components.js"></script>
   ```
-* **2. หลักการ Bootstrap Grid 12 คอลัมน์:**
+* **2. การลงทะเบียน Custom Web Components ใน JavaScript (`components.js`):**
+  ```javascript
+  // สั่งให้เบราว์เซอร์จดทะเบียนแท็กใหม่คู่กับ Class แม่แบบ
+  customElements.define('site-header', SiteHeader);
+  customElements.define('site-footer', SiteFooter);
+  ```
+  *(หมายเหตุ: ชื่อแท็กต้องมีขีดกลาง `-` เสมอ เช่น `site-header`)*
+* **3. หลักการ Bootstrap Grid 12 คอลัมน์:**
   ```html
   <div class="container">
     <div class="row g-4">
@@ -97,7 +104,9 @@
 ### Slide 7: ปฏิบัติการภารกิจหลัก (Core Mission: Bootstrap & Shared Components)
 * **ขั้นตอนที่ 1: โหลด Bootstrap:** ตรวจสอบ `<link>` ของ Bootstrap CSS และ `<script>` ของ Bootstrap Bundle JS ในทุกหน้า
 * **ขั้นตอนที่ 2: วาง Component:** ใส่ `<site-header>` และ `<site-footer>` ในตำแหน่งที่ถูกต้อง แล้วเรียกใช้ `components.js`
-* **ขั้นตอนที่ 3: แก้ลิงก์จากจุดเดียว:** เปลี่ยน `href="#"` ใน `components.js` เป็น `index.html`, `course.html`, `instructors.html` และ `contact.html`
+* **ขั้นตอนที่ 3: แก้ลิงก์และจดทะเบียนใน `components.js`:** 
+  * เปลี่ยน `href="#"` เป็น `index.html`, `course.html`, `instructors.html` และ `contact.html`
+  * เติมคำสั่ง `customElements.define('site-header', SiteHeader);` และ `customElements.define('site-footer', SiteFooter);` ที่ท้ายไฟล์ เพื่อให้ Component ปรากฏบนหน้าจอ
 * **ขั้นตอนที่ 4: ทดลองหลักการ Bootstrap:** ปรับ `container`, `row`, `col-md-*`, `d-flex`, `gap-*` และ `text-*` แล้วสังเกตผลทันทีในเบราว์เซอร์
 
 ---
@@ -111,7 +120,7 @@
 ---
 
 ### Slide 9: จุดระวังและเทคนิคป้องกันบั๊ก (Pro-Tips & Bug Prevention)
-* **บั๊กที่ 1: Component ไม่แสดงผล:** ตรวจชื่อแท็กให้ตรง (`<site-header>`), ตรวจว่าโหลด `components.js` และวาง Script หลัง Component
+* **บั๊กที่ 1: Component ไม่แสดงผล:** ตรวจว่าพิมพ์ `customElements.define(...)` ที่ท้ายไฟล์ `components.js` ครบหรือไม่, สะกดชื่อแท็กตรงกันหรือไม่ (`<site-header>`), ตรวจว่าแท็ก `<script src="components.js"></script>` อยู่ท้ายไฟล์ HTML หรือไม่
 * **บั๊กที่ 2: Hamburger Menu กดไม่ได้:** ตรวจว่าโหลด Bootstrap Bundle JS และค่า `data-bs-target` ตรงกับ `id` ของเมนู
 * **บั๊กที่ 3: Layout ล้นหรือไม่เรียงตามต้องการ:** ตรวจโครงสร้าง `.container > .row > .col-*` และใช้ `col-12 col-md-6` สำหรับการปรับตามจอ
 * **บั๊กที่ 4: เมนู Active ผิดหน้า:** ตรวจค่า `active` และชื่อไฟล์ใน `isActive()` ให้ตรงกับ `href`
